@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\scripts\CameraAnimation.cs" />
+     <Compile Include="Assets\scripts\FollowCamera.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/FreeSoft/unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
