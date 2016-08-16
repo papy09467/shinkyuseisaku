@@ -14,28 +14,17 @@ public class FollowCamera : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		inputManager = FindObjectOfType<inputManager> ();
+		inputManager = FindObjectOfType<InputManager> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (inputManager.Moved ()) {
-			float angleperPixel = rotAngle / (float)Screen.width;
-			Vector2 delta = inputManager.GetDeltaPosition ();
-			horizontalAngle += delta.x * anglePerPixel;
-			horizontalAngle = Mathf.Repeat (horizontalAngle, 360.0f);
-			verticalAngle -= delta.y * anglePerPixel;
-			verticalAngle = Mathf.Clamp (verticalAngle, -60.0f, 60.0f);
-		}
 
 		if (lookTarget != null) {
 			Vector3 lookPosition = lookTarget.position + offset;
 			Vector3 relativePos = Quaternion.Euler (verticalAngle, horizontalAngle, 0) * new Vector3 (0, 0, -distance);
 			transform.position = lookPosition + relativePos;
 			transform.LookAt (lookPosition);
-			RaycastHit hitinfo;
-			if (Physics.Linecast (lookPosition, transform.position, outhitInfo, 1 << LayerMask.NameToLayer ("Ground")))
-				transform.position = hitInfo.point;
 		}
 	}
 	public void SetTarget(Transform target){

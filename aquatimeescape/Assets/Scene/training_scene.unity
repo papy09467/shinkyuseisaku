@@ -97,6 +97,7 @@ GameObject:
   - 92: {fileID: 573392839}
   - 124: {fileID: 573392838}
   - 81: {fileID: 573392837}
+  - 114: {fileID: 573392842}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -172,6 +173,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1037983956}
   m_RootOrder: 0
+--- !u!114 &573392842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 573392836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73bdec437c4b5f14cb2db4542194ea41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 5
+  horizontalAngle: 0
+  rotAngle: 180
+  verticalAngle: 15
+  lookTarget: {fileID: 1656997726}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1037983955
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +219,34 @@ Transform:
   - {fileID: 573392841}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1 &1104528355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1104528356}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1104528356
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104528355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: -7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &1251374974
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +321,7 @@ GameObject:
   - 65: {fileID: 1656997724}
   - 23: {fileID: 1656997723}
   - 143: {fileID: 1656997727}
+  - 114: {fileID: 1656997728}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -357,3 +404,16 @@ CharacterController:
   m_SkinWidth: 0.05
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1656997728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1656997722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7cb909e65f86c84f841d997ec4aaa66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movespead: 5
+  rotationSpeed: 360
