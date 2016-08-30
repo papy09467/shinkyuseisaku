@@ -3,8 +3,10 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	public float movespead = 5f;
-	public float rotationSpeed = 360f;
+	public float rotationSpeed = 2f;
+	float maxAngle = 40;
+	float minAngle = -40;
+	public float movespeed = 5f;
 
 	CharacterController characterController;
 
@@ -12,15 +14,24 @@ public class Player : MonoBehaviour {
 	void Start () {
 		characterController = GetComponent<CharacterController> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		Vector3 direction = new Vector3 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"), 0);
-		if (Input.GetMouseButton (1)) {
-			if (direction.sqrMagnitude > 0.01f) {
-				Vector3 turn = Vector3.Slerp (transform.forward, direction, rotationSpeed * Time.deltaTime / Vector3.Angle (transform.forward, direction));
-				transform.LookAt (transform.position + turn);
-			}
-		}
+		direction.y = -direction.y;
+
+		//縦回転制限
+		float rotateX = (transform.eulerAngles.x  > 180)? transform.eulerAngles.x -360 : transform.eulerAngles.x;
+		float angleX = Mathf.Clamp (rotateX + direction.y * rotationSpeed, minAngle, maxAngle);
+		angleX = (angleX < 0) ? angleX + 360 : angleX;
+
+		//横回転制限
+		float rotateY = (transform.eulerAngles.y  > 180)? transform.eulerAngles.y -360 : transform.eulerAngles.y;
+		float angleY = Mathf.Clamp (rotateY + direction.x * rotationSpeed, minAngle, maxAngle);
+		angleY = (angleY < 0) ? angleY + 360 : angleY;
+
+		//回転
+		transform.rotation = Quaternion.Euler (angleX, angleY, 0);
+
 	}
 }
