@@ -10,6 +10,9 @@ public class FollowCamera : MonoBehaviour {
 	public Transform lookTarget;
 	public Vector3 offset = Vector3.zero;
 
+	GameObject player;
+
+
 	InputManager inputManager;
 
 	// Use this for initialization
@@ -19,11 +22,19 @@ public class FollowCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
+		//float anglePerPixel = rotAngle / (float)Screen.width;
+		//Vector2 delta = inputManager.GetDeltaPosition ();
+		//horizontalAngle += delta.x * anglePerPixel;
+		//horizontalAngle = Mathf.Repeat (horizontalAngle, 360.0f);
+		//verticalAngle -= delta.y * anglePerPixel;
+		//verticalAngle = Mathf.Clamp (verticalAngle, -60.0f, 60.0f);
 
 		if (lookTarget != null) {
 			Vector3 lookPosition = lookTarget.position + offset;
 			Vector3 relativePos = Quaternion.Euler (verticalAngle, horizontalAngle, 0) * new Vector3 (0, 0, -distance);
-			transform.position = lookPosition + relativePos;
+			transform.position =lookPosition + relativePos;
+
 			transform.LookAt (lookPosition);
 		}
 	}
