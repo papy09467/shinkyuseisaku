@@ -4,10 +4,10 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	public float rotationSpeed = 1f;
-	float maxAngleX = 40;
-	float minAngleX = -40;
-	float maxAngleY = 150;
-	float minAngleY = -150;
+	float maxAngleX = 60;
+	float minAngleX = -60;
+	float maxAngleY = 180;
+	float minAngleY = -180;
 	public float movespeed = 0.1f;
 
 	CharacterController characterController;
@@ -35,7 +35,6 @@ public class Player : MonoBehaviour {
 		float rotateY = (transform.eulerAngles.y  > 180)? transform.eulerAngles.y -360 : transform.eulerAngles.y;
 		float angleY = Mathf.Clamp (rotateY + direction.x * rotationSpeed, minAngleY, maxAngleY);
 		angleY = (angleY < 0) ? angleY + 360 : angleY;
-
 
 		//回転
 		transform.rotation = Quaternion.Euler (angleX, angleY, 0);

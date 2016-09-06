@@ -168,7 +168,6 @@ GameObject:
   - 92: {fileID: 573392839}
   - 124: {fileID: 573392838}
   - 81: {fileID: 573392837}
-  - 114: {fileID: 573392842}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -237,30 +236,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 573392836}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.09584576, y: 0, z: 0, w: 0.9953962}
+  m_LocalPosition: {x: 0, y: 2, z: -1.2}
+  m_LocalScale: {x: 1, y: 0.9708735, z: 0.22912647}
+  m_LocalEulerAnglesHint: {x: 11, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 1037983956}
+  m_Father: {fileID: 1656997726}
   m_RootOrder: 0
---- !u!114 &573392842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 573392836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73bdec437c4b5f14cb2db4542194ea41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 5
-  horizontalAngle: 0
-  rotAngle: 180
-  verticalAngle: 15
-  lookTarget: {fileID: 1656997726}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1037983955
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,8 +268,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 573392841}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!1 &1104528355
@@ -515,10 +496,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1656997722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 0}
+  m_LocalPosition: {x: 0, y: 50, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 573392841}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!143 &1656997727
@@ -550,7 +532,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 2
+  maxAngleX: 60
+  minAngleX: -60
+  maxAngleY: 60
+  minAngleY: -60
   movespeed: 0.5
+  characterController: {fileID: 0}
 --- !u!1 &1735799846
 GameObject:
   m_ObjectHideFlags: 0
