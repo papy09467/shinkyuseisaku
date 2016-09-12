@@ -6,17 +6,24 @@ public class Player : MonoBehaviour {
 	public float rotationSpeed = 1f;
 	float maxAngleX = 60;
 	float minAngleX = -60;
-	float maxAngleY = 180;
-	float minAngleY = -180;
+	float maxAngleY = 60;
+	float minAngleY = -60;
 	public float movespeed = 0.1f;
+	private bool maxaccel = false;
+	public float maxspeed;
+	public float accel = 0.1f;
+	float defaltspeed = 0.1f;
 
+	Rigidbody rb;
 	CharacterController characterController;
+
 
 	//InputManager inputManager;
 
 	// Use this for initialization
 	void Start () {
 		characterController = GetComponent<CharacterController> ();
+		rb = GetComponent<Rigidbody> ();
 		//inputManager = FindObjectOfType<InputManager> ();
 	}
 
@@ -39,7 +46,23 @@ public class Player : MonoBehaviour {
 		//回転
 		transform.rotation = Quaternion.Euler (angleX, angleY, 0);
 
+		if (Input.GetKeyDown (KeyCode.A) && maxaccel == false) {
+			maxaccel = true;
+		}
+
+		if (Input.GetKeyUp (KeyCode.A)) {
+			maxaccel = false;
+		}
+
+		if (maxaccel == true) {
+			if (movespeed < maxspeed) {
+				movespeed += accel;
+			}
+		} else if (defaltspeed <= movespeed ){
+			movespeed -= accel;
+		}
 
 		transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
+
 	}
 }

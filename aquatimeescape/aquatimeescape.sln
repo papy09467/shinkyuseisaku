@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{3A123407-3FDB-9455-802F-9EDC76ED5398}") = "aquatimeescape", "Assembly-CSharp.csproj", "{46253CE1-A01B-7708-8CC3-72667937CBCE}"
 EndProject
-Project("{3A123407-3FDB-9455-802F-9EDC76ED5398}") = "aquatimeescape", "Assembly-CSharp-Editor.csproj", "{ED306238-D4C8-3AE2-7332-B1C28A93BB68}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,10 +13,6 @@ Global
 		{46253CE1-A01B-7708-8CC3-72667937CBCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46253CE1-A01B-7708-8CC3-72667937CBCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46253CE1-A01B-7708-8CC3-72667937CBCE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED306238-D4C8-3AE2-7332-B1C28A93BB68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED306238-D4C8-3AE2-7332-B1C28A93BB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED306238-D4C8-3AE2-7332-B1C28A93BB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED306238-D4C8-3AE2-7332-B1C28A93BB68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
