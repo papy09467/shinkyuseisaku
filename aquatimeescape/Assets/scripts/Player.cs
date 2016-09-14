@@ -6,8 +6,8 @@ public class Player : MonoBehaviour {
 	public float rotationSpeed = 1f;
 	float maxAngleX = 60;
 	float minAngleX = -60;
-	float maxAngleY = 60;
-	float minAngleY = -60;
+	float maxAngleY = 180;
+	float minAngleY = -180;
 	public static float movespeed = 0.1f;
 	private bool maxaccel = false;
 	public float maxspeed;

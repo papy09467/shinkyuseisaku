@@ -3,14 +3,14 @@ using System.Collections;
 
 public class FollowCamera : MonoBehaviour {
 
-	public float distance = 5.0f;
+	public float distance = 10.0f;
 	public float horizontalAngle = 0.0f;
 	public float rotAngle = 180.0f;
 	public float verticalAngle = 10.0f;
 	public Transform lookTarget;
 	public Vector3 offset = Vector3.zero;
 	float accelsp = Player.movespeed - Player.defaltspeed;
-	GameObject player;
+	public Transform player;
 
 
 	InputManager inputManager;
@@ -18,7 +18,7 @@ public class FollowCamera : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		inputManager = FindObjectOfType<InputManager> ();
-		GetComponent<Player>();
+
 	}
 	
 	// Update is called once per frame
@@ -32,15 +32,12 @@ public class FollowCamera : MonoBehaviour {
 		//verticalAngle -= delta.y * anglePerPixel;
 		//verticalAngle = Mathf.Clamp (verticalAngle, -60.0f, 60.0f);
 
-		if (Input.GetKeyDown (KeyCode.A)) {
-
-		}
+	
 
 		if (lookTarget != null && cameracheck == false) {
 			Vector3 lookPosition = lookTarget.position + offset;
-			Vector3 relativePos = Quaternion.Euler (verticalAngle, horizontalAngle, 0) * new Vector3 (0, 0, -distance);
-			transform.position =lookPosition + relativePos;
-
+			Vector3 relativePos = Quaternion.Euler (player.eulerAngles.x, player.eulerAngles.y, 0) * new Vector3 (0, 6, -distance * 2);
+			transform.position =lookPosition + (relativePos / 2);
 			transform.LookAt (lookPosition);
 		}
 
