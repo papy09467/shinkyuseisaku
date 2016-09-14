@@ -9,7 +9,7 @@ public class FollowCamera : MonoBehaviour {
 	public float verticalAngle = 10.0f;
 	public Transform lookTarget;
 	public Vector3 offset = Vector3.zero;
-
+	float accelsp = Player.movespeed - Player.defaltspeed;
 	GameObject player;
 
 
@@ -18,11 +18,13 @@ public class FollowCamera : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		inputManager = FindObjectOfType<InputManager> ();
+		GetComponent<Player>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		bool cameracheck = false;
 		//float anglePerPixel = rotAngle / (float)Screen.width;
 		//Vector2 delta = inputManager.GetDeltaPosition ();
 		//horizontalAngle += delta.x * anglePerPixel;
@@ -30,13 +32,18 @@ public class FollowCamera : MonoBehaviour {
 		//verticalAngle -= delta.y * anglePerPixel;
 		//verticalAngle = Mathf.Clamp (verticalAngle, -60.0f, 60.0f);
 
-		if (lookTarget != null) {
+		if (Input.GetKeyDown (KeyCode.A)) {
+
+		}
+
+		if (lookTarget != null && cameracheck == false) {
 			Vector3 lookPosition = lookTarget.position + offset;
 			Vector3 relativePos = Quaternion.Euler (verticalAngle, horizontalAngle, 0) * new Vector3 (0, 0, -distance);
 			transform.position =lookPosition + relativePos;
 
 			transform.LookAt (lookPosition);
 		}
+
 	}
 	public void SetTarget(Transform target){
 		lookTarget = target;

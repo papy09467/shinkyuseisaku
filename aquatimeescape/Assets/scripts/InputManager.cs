@@ -5,7 +5,7 @@ public class InputManager : MonoBehaviour {
 
 	Vector2 delta = Vector2.zero;
 	bool moved = false;
-
+	float accelsp;
 
 	void Update () {
 
@@ -36,4 +36,5 @@ public class InputManager : MonoBehaviour {
 	public bool GameStart(){
 		return true;
 	}
+
 }

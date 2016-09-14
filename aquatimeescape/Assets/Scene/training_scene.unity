@@ -560,9 +560,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 2
-  movespeed: 0.5
-  maxspeed: 3
-  accel: 0.1
+  maxspeed: 2
+  accel: 0.01
 --- !u!1 &1735799846
 GameObject:
   m_ObjectHideFlags: 0

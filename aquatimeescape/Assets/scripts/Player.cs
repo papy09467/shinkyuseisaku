@@ -8,11 +8,11 @@ public class Player : MonoBehaviour {
 	float minAngleX = -60;
 	float maxAngleY = 60;
 	float minAngleY = -60;
-	public float movespeed = 0.1f;
+	public static float movespeed = 0.1f;
 	private bool maxaccel = false;
 	public float maxspeed;
 	public float accel = 0.1f;
-	float defaltspeed = 0.1f;
+	public static float defaltspeed = 0.1f;
 
 	Rigidbody rb;
 	CharacterController characterController;
@@ -58,9 +58,11 @@ public class Player : MonoBehaviour {
 			if (movespeed < maxspeed) {
 				movespeed += accel;
 			}
-		} else if (defaltspeed <= movespeed ){
+		} else if (defaltspeed < movespeed ){
 			movespeed -= accel;
 		}
+
+
 
 		transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
 
