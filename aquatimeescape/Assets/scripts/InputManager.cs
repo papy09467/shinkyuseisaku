@@ -4,7 +4,7 @@ using System.Collections;
 public class InputManager : MonoBehaviour {
 
 	Vector2 delta = Vector2.zero;
-	bool moved = false;
+	public bool moved = false;
 	float accelsp;
 
 	void Update () {
@@ -26,6 +26,12 @@ public class InputManager : MonoBehaviour {
 	}
 
 	public bool Moved(){		
+		moved = true;
+		return moved;
+	}
+
+	public bool MoveFin(){
+		moved = false;
 		return moved;
 	}
 
@@ -36,5 +42,6 @@ public class InputManager : MonoBehaviour {
 	public bool GameStart(){
 		return true;
 	}
+		
 
 }

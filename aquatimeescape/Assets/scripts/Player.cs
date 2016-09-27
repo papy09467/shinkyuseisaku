@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
 
 	Rigidbody rb;
 	CharacterController characterController;
-
+	InputManager inputManager;
 
 	//InputManager inputManager;
 
@@ -22,7 +22,8 @@ public class Player : MonoBehaviour {
 	void Start () {
 		characterController = GetComponent<CharacterController> ();
 		rb = GetComponent<Rigidbody> ();
-		//inputManager = FindObjectOfType<InputManager> ();
+		inputManager = FindObjectOfType<InputManager> ();
+
 	}
 
 	// Update is called once per frame
@@ -45,10 +46,12 @@ public class Player : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.A) && maxaccel == false) {
 			maxaccel = true;
+			inputManager.Moved ();
 		}
 
 		if (Input.GetKeyUp (KeyCode.A)) {
 			maxaccel = false;
+			inputManager.MoveFin ();
 		}
 
 		if (maxaccel == true) {
