@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/*
+サメくん移動プログラム
+InputManager Stamina Animator 連携
+
+長谷川弘明
+*/
+using UnityEngine;
 using System.Collections;
 
 public class Player : MonoBehaviour {
@@ -45,22 +51,16 @@ public class Player : MonoBehaviour {
 		transform.rotation = Quaternion.Euler (angleX, angleY, 0);
 
 		//加速
-		if (inputManager.st_out == false) {
-			if (Input.GetKeyDown (KeyCode.A) && maxaccel == false) {
-				maxaccel = true;
-				inputManager.Moved ();
-			}
+		if (Input.GetKeyDown (KeyCode.A) && maxaccel == false) {
+			maxaccel = true;
+			inputManager.Moved ();
+		}
 
-			if (Input.GetKeyUp (KeyCode.A)) {
-				maxaccel = false;
-				inputManager.MoveFin ();
-			}
-				
-		} else if (inputManager.st_out == true){
+		if (Input.GetKeyUp (KeyCode.A)) {
 			maxaccel = false;
 			inputManager.MoveFin ();
-		}	
-
+		}
+				
 		//加速減速処理(maxaccel true or else)
 		if (maxaccel == true) {
 			if (movespeed < maxspeed) {
