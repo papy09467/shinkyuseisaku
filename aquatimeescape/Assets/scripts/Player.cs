@@ -44,25 +44,31 @@ public class Player : MonoBehaviour {
 		//回転
 		transform.rotation = Quaternion.Euler (angleX, angleY, 0);
 
-		if (Input.GetKeyDown (KeyCode.A) && maxaccel == false) {
-			maxaccel = true;
-			inputManager.Moved ();
-		}
+		//加速
+		if (inputManager.st_out == false) {
+			if (Input.GetKeyDown (KeyCode.A) && maxaccel == false) {
+				maxaccel = true;
+				inputManager.Moved ();
+			}
 
-		if (Input.GetKeyUp (KeyCode.A)) {
+			if (Input.GetKeyUp (KeyCode.A)) {
+				maxaccel = false;
+				inputManager.MoveFin ();
+			}
+				
+		} else if (inputManager.st_out == true){
 			maxaccel = false;
 			inputManager.MoveFin ();
-		}
+		}	
 
+		//加速減速処理(maxaccel true or else)
 		if (maxaccel == true) {
 			if (movespeed < maxspeed) {
 				movespeed += accel;
 			}
-		} else if (defaltspeed < movespeed ){
+		} else if (defaltspeed < movespeed) {
 			movespeed -= accel;
 		}
-
-
 
 		transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
 

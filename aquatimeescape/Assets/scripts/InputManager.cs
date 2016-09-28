@@ -6,6 +6,8 @@ public class InputManager : MonoBehaviour {
 	Vector2 delta = Vector2.zero;
 	public bool moved = false;
 	float accelsp;
+	public bool st_out = false;
+	public bool heal_st = false;
 
 	void Update () {
 
@@ -34,6 +36,26 @@ public class InputManager : MonoBehaviour {
 		moved = false;
 		return moved;
 	}
+
+	public bool St_out() {
+		
+		if (st_out == false)
+			st_out = true;
+		else
+			st_out = false;
+		
+		return st_out;
+	}
+
+	public bool Heal_st() {
+
+		if (heal_st == false)
+			heal_st = true;
+		else
+			heal_st = false;
+
+		return heal_st;
+	}	
 
 	public Vector2 GetCursorPosition(){
 		return Input.mousePosition;
