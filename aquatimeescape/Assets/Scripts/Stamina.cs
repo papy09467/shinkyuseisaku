@@ -9,7 +9,7 @@ public class Stamina : MonoBehaviour {
 	float healValue;
 	public float sthealTime;
 
-	public Image stGauge; // CircleGauge
+	public Image stGauge;
 	InputManager inputManager;
 
 	void Start () {
