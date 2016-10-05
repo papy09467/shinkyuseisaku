@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: f94dec07b31d29141be7e020d4b58255
+timeCreated: 1475643423
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Camera
+    100002: Dorsal fin_1
+    100004: Dorsal fin_1_end
+    100006: Dorsal fin_2
+    100008: Dorsal fin_2_end
+    100010: Fin_1
+    100012: Fin_10
+    100014: Fin_10_end
+    100016: Fin_11
+    100018: Fin_12
+    100020: Fin_13
+    100022: Fin_13_end
+    100024: Fin_2
+    100026: Fin_3
+    100028: Fin_4
+    100030: Fin_5
+    100032: Fin_6
+    100034: Fin_7
+    100036: Fin_8
+    100038: Fin_8_end
+    100040: Fin_9
+    100042: Fin_9_end
+    100044: Head_1
+    100046: Head_2
+    100048: Head_2_end
+    100050: //RootNode
+    100052: KUMANOMI_mqo
+    100054: Lamp
+    100056: obj2
+    100058: spine_1
+    100060: spine_2
+    100062: spine_3
+    100064: spine_4
+    100066: tail_1
+    100068: tail_2
+    100070: tail_3
+    100072: tail_3_end
+    100074: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2"
+    400000: Camera
+    400002: Dorsal fin_1
+    400004: Dorsal fin_1_end
+    400006: Dorsal fin_2
+    400008: Dorsal fin_2_end
+    400010: Fin_1
+    400012: Fin_10
+    400014: Fin_10_end
+    400016: Fin_11
+    400018: Fin_12
+    400020: Fin_13
+    400022: Fin_13_end
+    400024: Fin_2
+    400026: Fin_3
+    400028: Fin_4
+    400030: Fin_5
+    400032: Fin_6
+    400034: Fin_7
+    400036: Fin_8
+    400038: Fin_8_end
+    400040: Fin_9
+    400042: Fin_9_end
+    400044: Head_1
+    400046: Head_2
+    400048: Head_2_end
+    400050: //RootNode
+    400052: KUMANOMI_mqo
+    400054: Lamp
+    400056: obj2
+    400058: spine_1
+    400060: spine_2
+    400062: spine_3
+    400064: spine_4
+    400066: tail_1
+    400068: tail_2
+    400070: tail_3
+    400072: tail_3_end
+    400074: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2"
+    4300000: obj2
+    7400000: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|swim_DOWN"
+    7400002: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|swim_GO"
+    7400004: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|swim_L"
+    7400006: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|swim_R"
+    7400008: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|swim_UP"
+    9500000: //RootNode
+    13700000: obj2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
