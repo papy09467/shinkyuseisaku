@@ -10,6 +10,7 @@ public class Stamina : MonoBehaviour {
 	public float sthealTime;
 
 	public Image stGauge;
+	public Image stGaugeout;
 	InputManager inputManager;
 
 	void Start () {
@@ -20,6 +21,13 @@ public class Stamina : MonoBehaviour {
 
 		downValue = Time.deltaTime / time;
 		healValue = downValue / sthealTime;
+
+		//スタミナゲージ色変化
+		if (stGauge.fillAmount <= 0.3) {
+			stGaugeout.color = Color.red;
+		} else {
+			stGaugeout.color = Color.white;
+		}
 
 		if (stGauge.fillAmount == 0) {
 			inputManager.St_out ();
