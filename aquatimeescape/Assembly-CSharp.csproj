@@ -45,14 +45,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ButtonScript.cs" />
-     <Compile Include="Assets\Scripts\CallScript.cs" />
-     <Compile Include="Assets\Scripts\CameraAnimation.cs" />
-     <Compile Include="Assets\Scripts\FollowCamera.cs" />
-     <Compile Include="Assets\Scripts\InputManager.cs" />
-     <Compile Include="Assets\Scripts\Kumanomi.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\Stamina.cs" />
+     <Compile Include="Assets\scripts\ButtonScript.cs" />
+     <Compile Include="Assets\scripts\CallScript.cs" />
+     <Compile Include="Assets\scripts\CameraAnimation.cs" />
+     <Compile Include="Assets\scripts\FollowCamera.cs" />
+     <Compile Include="Assets\scripts\InputManager.cs" />
+     <Compile Include="Assets\scripts\Kumanomi.cs" />
+     <Compile Include="Assets\scripts\Player.cs" />
+     <Compile Include="Assets\scripts\Stamina.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

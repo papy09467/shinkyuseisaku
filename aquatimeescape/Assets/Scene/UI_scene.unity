@@ -115,6 +115,7 @@ MonoBehaviour:
   time: 2
   sthealTime: 5
   stGauge: {fileID: 1445583411}
+  stGaugeout: {fileID: 0}
 --- !u!1001 &1691656732
 Prefab:
   m_ObjectHideFlags: 0
@@ -211,6 +212,16 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013977677672, guid: 0e8eca1228d56f448bc97022a63ce419,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -550
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013977677672, guid: 0e8eca1228d56f448bc97022a63ce419,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 260
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e8eca1228d56f448bc97022a63ce419, type: 2}
