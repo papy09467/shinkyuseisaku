@@ -112,10 +112,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e9950399d348344f89f476f6d85dce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 2
-  sthealTime: 5
+  time: 3
+  sthealTime: 3
   stGauge: {fileID: 1445583411}
-  stGaugeout: {fileID: 0}
+  stGaugeout: {fileID: 1476318378}
+--- !u!114 &1476318378 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013425131802, guid: 0e8eca1228d56f448bc97022a63ce419,
+    type: 2}
+  m_PrefabInternal: {fileID: 1691656732}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1691656732
 Prefab:
   m_ObjectHideFlags: 0
@@ -221,7 +227,7 @@ Prefab:
     - target: {fileID: 224000013977677672, guid: 0e8eca1228d56f448bc97022a63ce419,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 260
+      value: 280
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e8eca1228d56f448bc97022a63ce419, type: 2}
