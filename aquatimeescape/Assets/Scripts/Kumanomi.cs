@@ -10,6 +10,9 @@ public class Kumanomi : MonoBehaviour {
 	public float maxspeed;
 	public float accel = 0.1f;
 	public static float defaltspeed = 0.1f;
+	//public GameObject kumanomi;
+	//public GameObject isogin;
+
 
 	Rigidbody rb;
 	CharacterController characterController;
@@ -23,9 +26,9 @@ public class Kumanomi : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		inputManager = FindObjectOfType<InputManager> ();
 
-	
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		Vector3 direction = new Vector3 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"), 0);
@@ -66,11 +69,27 @@ public class Kumanomi : MonoBehaviour {
 
 		//停止
 		//if (Input.NotGetKey (Keycode.A) || Input.NotGetKey (Keycode.S)) {
-			transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
+		transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
 		//}
+
+		/*Vector3 Apos = kumanomi.transform.position;
+		Vector3 Bpos = isogin.transform.position;
+		float dis = Vector3.Distance (Apos, Bpos);
+		Debug.Log ("Distance : " + dis);
+
+		//隠れる
+		if (Distance <= 100) {
+			print ("左クリックで隠れる");
+
+			if (Input.GetKey (KeyCode.Mouse.Left)) {
+
+				if (Input.GetKey (KeyCode.Mouse.Left)) {
+					break;
+				}
+			}
+		}*/
 	}
 }
-
 	
 	
 
