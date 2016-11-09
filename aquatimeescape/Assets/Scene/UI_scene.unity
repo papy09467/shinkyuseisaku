@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37356424, g: 0.3811201, b: 0.35887662, a: 1}
+  m_IndirectSpecularColor: {r: 0.44597834, g: 0.49570054, b: 0.57445025, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -131,6 +131,7 @@ GameObject:
   - 224: {fileID: 1072940954}
   - 222: {fileID: 1072940956}
   - 114: {fileID: 1072940955}
+  - 114: {fileID: 1072940957}
   m_Layer: 5
   m_Name: 2p_normal
   m_TagString: Untagged
@@ -189,6 +190,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1072940953}
+--- !u!114 &1072940957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1072940953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06cb5e7ee0b9b54f8d2a27ce04a7320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultSprite: {fileID: 21300000, guid: 480985d3b28d29d4fa9df3e793718b20, type: 3}
+  PoisonSprite: {fileID: 21300000, guid: 130d37ef928f72f4cafef78053761adb, type: 3}
+  DeathSprite: {fileID: 21300000, guid: 09747df1d8c90c04db3b42ae5aa6bec0, type: 3}
 --- !u!1 &1263874416
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +214,7 @@ GameObject:
   - 224: {fileID: 1263874417}
   - 222: {fileID: 1263874419}
   - 114: {fileID: 1263874418}
+  - 114: {fileID: 1263874420}
   m_Layer: 5
   m_Name: 1p_normal
   m_TagString: Untagged
@@ -257,6 +273,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1263874416}
+--- !u!114 &1263874420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1263874416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06cb5e7ee0b9b54f8d2a27ce04a7320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultSprite: {fileID: 21300000, guid: 480985d3b28d29d4fa9df3e793718b20, type: 3}
+  PoisonSprite: {fileID: 21300000, guid: 130d37ef928f72f4cafef78053761adb, type: 3}
+  DeathSprite: {fileID: 21300000, guid: 09747df1d8c90c04db3b42ae5aa6bec0, type: 3}
 --- !u!1 &1319043657
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +686,7 @@ GameObject:
   - 224: {fileID: 2131512549}
   - 222: {fileID: 2131512551}
   - 114: {fileID: 2131512550}
+  - 114: {fileID: 2131512552}
   m_Layer: 5
   m_Name: 3p_normal
   m_TagString: Untagged
@@ -714,3 +745,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2131512548}
+--- !u!114 &2131512552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2131512548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06cb5e7ee0b9b54f8d2a27ce04a7320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultSprite: {fileID: 21300000, guid: 480985d3b28d29d4fa9df3e793718b20, type: 3}
+  PoisonSprite: {fileID: 21300000, guid: 130d37ef928f72f4cafef78053761adb, type: 3}
+  DeathSprite: {fileID: 21300000, guid: 09747df1d8c90c04db3b42ae5aa6bec0, type: 3}
