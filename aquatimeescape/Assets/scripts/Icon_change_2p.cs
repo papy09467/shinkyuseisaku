@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Icon_change : MonoBehaviour {
+public class Icon_change_2p : MonoBehaviour {
 	InputManager inputManager;
 	Image MainImage;
 
