@@ -1,7 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/kumanomi_scene.unity
-  isLoaded: 1
-  isActive: 0
 - path: Assets/Scene/UI_scene.unity
   isLoaded: 1
   isActive: 0
@@ -9,5 +6,8 @@ sceneSetups:
   isLoaded: 1
   isActive: 1
 - path: Assets/Scene/training_scene.unity
+  isLoaded: 1
+  isActive: 0
+- path: Assets/Scene/kumanomi_scene.unity
   isLoaded: 1
   isActive: 0
