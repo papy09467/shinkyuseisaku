@@ -25,12 +25,12 @@ public class FollowCamera : MonoBehaviour {
 	void Update () {
 
 		bool cameracheck = false;
-		//float anglePerPixel = rotAngle / (float)Screen.width;
-		//Vector2 delta = inputManager.GetDeltaPosition ();
-		//horizontalAngle += delta.x * anglePerPixel;
-		//horizontalAngle = Mathf.Repeat (horizontalAngle, 360.0f);
-		//verticalAngle -= delta.y * anglePerPixel;
-		//verticalAngle = Mathf.Clamp (verticalAngle, -60.0f, 60.0f);
+		float anglePerPixel = rotAngle / (float)Screen.width;
+		Vector2 delta = inputManager.GetDeltaPosition ();
+		horizontalAngle += delta.x * anglePerPixel;
+		horizontalAngle = Mathf.Repeat (horizontalAngle, 360.0f);
+		verticalAngle -= delta.y * anglePerPixel;
+		verticalAngle = Mathf.Clamp (verticalAngle, -60.0f, 60.0f);
 
 	
 

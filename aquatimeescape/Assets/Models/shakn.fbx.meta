@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 9600b9b5dc4eed24f9c980022b305c51
-timeCreated: 1479084365
+guid: ecac8156fd58ba54a9552e2cde7670d0
+timeCreated: 1479187028
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -118,7 +118,7 @@ ModelImporter:
     7400002: "Armature|\u4E0B\u5411\u304D1420\uFF5E1600"
     7400004: "Armature|\u53F3\u5411\u304D800\uFF5E1000"
     7400006: "Armature|\u5DE6\u5411\u304D1020\uFF5E1220"
-    7400008: "Armature|\u901A\u5E380~360"
+    7400008: "Armature|\u901A\u5E380~240"
     7400010: "Armature|\u98DF\u3079\u308B380\uFF5E780"
     9500000: //RootNode
     13700000: Caudal
