@@ -21,20 +21,20 @@ public class Player : MonoBehaviour {
 	Rigidbody rb;
 	CharacterController characterController;
 	InputManager inputManager;
-
-	//InputManager inputManager;
+	Animator animator;
 
 	// Use this for initialization
 	void Start () {
 		characterController = GetComponent<CharacterController> ();
 		rb = GetComponent<Rigidbody> ();
 		inputManager = FindObjectOfType<InputManager> ();
-
+		animator = GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		Vector3 direction = new Vector3 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"), 0);
+		animator.SetFloat ("Speed", movespeed);
 		//inputManager.GameStart ();
 		direction.y = -direction.y;
 

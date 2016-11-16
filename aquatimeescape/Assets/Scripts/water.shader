@@ -37,8 +37,8 @@ struct Input {
 void vert (inout appdata_full v) {
     float phase = _Time * 30.0;
     float4 wpos = mul( unity_ObjectToWorld, v.vertex);
-    float offset = (wpos.x + (wpos.z * 30)) * 31;
-    wpos.y = sin(phase + offset) * 30;
+    float offset = (wpos.x + (wpos.z * 5)) * 6;
+    wpos.y = sin(phase + offset) * 5;
               v.vertex = mul(unity_WorldToObject, wpos);
 }
  
