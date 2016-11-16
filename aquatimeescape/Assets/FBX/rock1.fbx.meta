@@ -1,0 +1,124 @@
+fileFormatVersion: 2
+guid: 84d39cb584ea7834693cecca9c4c5dbc
+timeCreated: 1479281728
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: rokku:iwawa:iwa1:group
+    100004: rokku:iwawa:iwa1:group1_pasted__pCube3
+    100006: rokku:iwawa:iwa1:pasted__pCube1
+    100008: rokku:iwawa:iwa1:pCube1
+    100010: rokku:iwawa:iwa1:pCube2
+    100012: rokku:iwawa:iwa1:transform1
+    100014: rokku:iwawa:iwa1:transform2
+    100016: rokku:iwawa:iwa:group
+    100018: rokku:iwawa:iwa:group1
+    100020: rokku:iwawa:iwa:group2
+    100022: rokku:iwawa:iwa:pasted__pCube1
+    100024: rokku:iwawa:iwa:pasted__pCube3
+    100026: rokku:iwawa:iwa:pasted__pCube3 1
+    100028: rokku:iwawa:iwa:pCube1
+    100030: rokku:iwawa:iwa:pCube2
+    100032: rokku:iwawa:iwa:pCube3
+    100034: rokku:iwawa:iwa:transform1
+    100036: rokku:iwawa:iwa:transform2
+    100038: rokku:iwawa:iwa:transform3
+    100040: rokku:iwawa:iwa:transform4
+    100042: rokku:iwawa:iwa:transform5
+    400000: //RootNode
+    400002: rokku:iwawa:iwa1:group
+    400004: rokku:iwawa:iwa1:group1_pasted__pCube3
+    400006: rokku:iwawa:iwa1:pasted__pCube1
+    400008: rokku:iwawa:iwa1:pCube1
+    400010: rokku:iwawa:iwa1:pCube2
+    400012: rokku:iwawa:iwa1:transform1
+    400014: rokku:iwawa:iwa1:transform2
+    400016: rokku:iwawa:iwa:group
+    400018: rokku:iwawa:iwa:group1
+    400020: rokku:iwawa:iwa:group2
+    400022: rokku:iwawa:iwa:pasted__pCube1
+    400024: rokku:iwawa:iwa:pasted__pCube3
+    400026: rokku:iwawa:iwa:pasted__pCube3 1
+    400028: rokku:iwawa:iwa:pCube1
+    400030: rokku:iwawa:iwa:pCube2
+    400032: rokku:iwawa:iwa:pCube3
+    400034: rokku:iwawa:iwa:transform1
+    400036: rokku:iwawa:iwa:transform2
+    400038: rokku:iwawa:iwa:transform3
+    400040: rokku:iwawa:iwa:transform4
+    400042: rokku:iwawa:iwa:transform5
+    2300000: rokku:iwawa:iwa1:group1_pasted__pCube3
+    2300002: rokku:iwawa:iwa1:pCube2
+    2300004: rokku:iwawa:iwa:pCube2
+    3300000: rokku:iwawa:iwa1:group1_pasted__pCube3
+    3300002: rokku:iwawa:iwa1:pCube2
+    3300004: rokku:iwawa:iwa:pCube2
+    4300000: rokku:iwawa:iwa:pCube2
+    4300002: rokku:iwawa:iwa1:pCube2
+    4300004: rokku:iwawa:iwa1:group1_pasted__pCube3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
