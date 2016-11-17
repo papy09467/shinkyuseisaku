@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
 	public float accel = 0.1f;
 	public static float defaltspeed = 0.1f;
 	private bool esccheck = false;
+	public bool attack = false;
 
 	Rigidbody rb;
 	CharacterController characterController;
@@ -41,6 +42,8 @@ public class Player : MonoBehaviour {
 	void Update () {
 		Vector3 direction = new Vector3 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"), 0);
 		animator.SetFloat ("Speed", movespeed);
+		animator.SetBool ("Attacking", attack);
+
 		//inputManager.GameStart ();
 		direction.y = -direction.y;
 
@@ -52,6 +55,9 @@ public class Player : MonoBehaviour {
 		//横回転制限
 		float rotateY = transform.eulerAngles.y;
 		float angleY = rotateY + direction.x * rotationSpeed;
+
+		//アニメーション設定
+		animator.SetFloat("up_down",transform.rotation.x);
 
 		//回転
 		transform.rotation = Quaternion.Euler (angleX, angleY, 0);
@@ -90,5 +96,9 @@ public class Player : MonoBehaviour {
 			esccheck = false;
 		}
 
+		//攻撃処理
+		if (Input.GetMouseButton(0)) {
+			attack = true;
+		}
 	}
 }
