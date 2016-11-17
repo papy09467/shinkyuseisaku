@@ -1,15 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\water.shader">
     <Files>
-      <File FileName="Assets\Scripts\Player.cs" Line="85" Column="21" />
+      <File FileName="Assets\Scripts\Player.cs" Line="73" Column="28" />
       <File FileName="Assets\scripts\FollowCamera.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\InputManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Stamina.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Kumanomi.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\Icon_change_1p.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\Icon_change_2p.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\water.shader" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\water.shader" Line="44" Column="2" />
       <File FileName="Assets\Scripts\CallScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
