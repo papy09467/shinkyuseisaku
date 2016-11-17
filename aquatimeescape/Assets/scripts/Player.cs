@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
 	public float maxspeed;
 	public float accel = 0.1f;
 	public static float defaltspeed = 0.1f;
+	private bool esccheck = false;
 
 	Rigidbody rb;
 	CharacterController characterController;
@@ -24,6 +25,11 @@ public class Player : MonoBehaviour {
 	Animator animator;
 
 	// Use this for initialization
+	void Awake () {
+		Cursor.lockState = CursorLockMode.Confined;
+		Cursor.visible = true;
+	}
+
 	void Start () {
 		characterController = GetComponent<CharacterController> ();
 		rb = GetComponent<Rigidbody> ();
@@ -71,6 +77,18 @@ public class Player : MonoBehaviour {
 		}
 
 		transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
+
+		//マウスカーソル表示
+		if (Input.GetKeyDown (KeyCode.Escape) && esccheck == false) {
+			Cursor.lockState = CursorLockMode.Confined;
+			Cursor.visible = true;
+			esccheck = true;
+		}
+		if (Input.GetKeyDown (KeyCode.Escape) && esccheck == true) {
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = false;
+			esccheck = false;
+		}
 
 	}
 }
