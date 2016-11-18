@@ -10,7 +10,6 @@ public class FollowCamera : MonoBehaviour {
 	public Transform lookTarget;
 	public Vector3 offset = Vector3.zero;
 	float accelsp = Player.movespeed - Player.defaltspeed;
-	public Transform player;
 	public float cameraRate = 0.5f; 
 
 
@@ -37,7 +36,7 @@ public class FollowCamera : MonoBehaviour {
 
 		if (lookTarget != null && cameracheck == false) {
 			Vector3 lookPosition = lookTarget.position + offset;
-			Vector3 relativePos = Quaternion.Euler (player.eulerAngles.x, player.eulerAngles.y, 0) * new Vector3 (0, 6, -distance * 2);
+			Vector3 relativePos = Quaternion.Euler (lookTarget.eulerAngles.x, lookTarget.eulerAngles.y, 0) * new Vector3 (0, 6, -distance * 2);
 			transform.position =lookPosition + (relativePos / 2) ;
 			transform.LookAt (lookPosition);
 
