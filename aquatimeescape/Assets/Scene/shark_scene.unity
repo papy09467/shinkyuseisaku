@@ -468,8 +468,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 1
-  maxspeed: 0
-  accel: 0.1
+  maxspeed: 4
+  accel: 0.5
   attack: 0
 --- !u!23 &350352267
 MeshRenderer:

@@ -12,11 +12,11 @@ public class Player : MonoBehaviour {
 	public float rotationSpeed = 1f;
 	float maxAngleX = 40;
 	float minAngleX = -40;
-	public static float movespeed = 0.1f;
+	public static float movespeed = 1f;
 	private bool maxaccel = false;
 	public float maxspeed;
 	public float accel = 0.1f;
-	public static float defaltspeed = 0.1f;
+	public static float defaltspeed = 1f;
 	private bool esccheck = false;
 	public bool attack = false;
 
