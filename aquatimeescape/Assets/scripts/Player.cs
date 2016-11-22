@@ -20,11 +20,6 @@ public class Player : MonoBehaviour {
 	private bool esccheck = false;
 	public bool attack = false;
 
-	public GameObject deathEff; //クマノミ死エフェクト
-	private float timer;		//クマノミが消えるまでの時間を格納
-	private bool death = false; //クマノミがサメにあたったか判定
-
-
 	Rigidbody rb;
 	CharacterController characterController;
 	InputManager inputManager;
@@ -104,21 +99,6 @@ public class Player : MonoBehaviour {
 		//攻撃処理
 		if (Input.GetMouseButton(0)) {
 			attack = true;
-		}
-
-		//クマノミ削除処理
-		if (death == true && Time.time - timer > 2) {
-			Destroy (gameObject);
-			death = false;
-		}
-	}
-
-	//クマノミがサメにあたったときエフェクト起動
-	void OnCollisionEnter(Collision collision){
-		if (collision.gameObject.name == "kumanomi") {
-			timer = Time.time;
-			Instantiate (deathEff, transform.position, Quaternion.identity);
-			death = true;
 		}
 	}
 }
