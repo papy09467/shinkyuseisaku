@@ -4,9 +4,9 @@ using System.Collections;
 public class FollowCamera : MonoBehaviour {
 
 	public float distance = 10.0f;
-	public float horizontalAngle = 0.0f;
+	//public float horizontalAngle = 0.0f;
 	public float rotAngle = 180.0f;
-	public float verticalAngle = 10.0f;
+	//public float verticalAngle = 10.0f;
 	public Transform lookTarget;
 	public Vector3 offset = Vector3.zero;
 	float accelsp = Player.movespeed - Player.defaltspeed;
