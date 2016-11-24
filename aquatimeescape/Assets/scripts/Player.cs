@@ -24,6 +24,10 @@ public class Player : MonoBehaviour {
 	private float timer;		//クマノミが消えるまでの時間を格納
 	private bool death = false; //クマノミがサメにあたったか判定
 
+	private bool myrotate = false; //角度を保存するかどうか
+	float AnglesX; //角度X
+	float AnglesY; //角度Y
+
 
 	Rigidbody rb;
 	CharacterController characterController;
@@ -113,12 +117,22 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	//クマノミがサメにあたったときエフェクト起動
+	//サメがあたったとき
 	void OnCollisionEnter(Collision collision){
 		if (collision.gameObject.name == "kumanomi") {
 			timer = Time.time;
 			Instantiate (deathEff, transform.position, Quaternion.identity);
 			death = true;
+		} else if (myrotate == false){
+			AnglesX = this.transform.localEulerAngles.x;
+			AnglesY = this.transform.localEulerAngles.y;
+			myrotate = true;
 		}
+	}
+
+	//オブジェクトが離れた時
+	void OnCollisionExit(Collision collision) {
+		transform.Rotate(AnglesX, AnglesY, 0 * Time.deltaTime);
+		myrotate = false;
 	}
 }
