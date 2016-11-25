@@ -777,7 +777,7 @@ GameObject:
   - 54: {fileID: 54000013990210292}
   - 114: {fileID: 114000010044261556}
   m_Layer: 0
-  m_Name: shakn
+  m_Name: shark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1641,6 +1641,7 @@ MonoBehaviour:
   rotationSpeed: 1
   maxspeed: 0
   accel: 0.1
+  attack: 0
 --- !u!137 &137000011993276376
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
