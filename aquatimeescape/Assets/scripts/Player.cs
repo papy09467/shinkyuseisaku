@@ -1,29 +1,33 @@
-﻿/*********************************
+﻿/*
 サメくん移動プログラム
 InputManager Stamina Animator 連携
 
 長谷川弘明
-
-更新 11/25 詐欺士
-*********************************/
+*/
 using UnityEngine;
 using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	public float rotationSpeed = 1f;		//回転速度
-	float maxAngleX = 40;					//上回転制限
-	float minAngleX = -40;					//下回転制限
+	public float rotationSpeed = 1f;
+	float maxAngleX = 40;
+	float minAngleX = -40;
+	public static float movespeed = 1f;
+	private bool maxaccel = false;
+	public float maxspeed;
+	public float accel = 0.1f;
+	public static float defaltspeed = 1f;
+	private bool esccheck = false;
+	public bool attack = false;
 
-	public static float movespeed = 1f;		//移動速度
-	public static float defaltspeed = 1f;	//元の速度
-	public float maxspeed;					//最大速度
-	public float accel = 0.1f;				//加速度
+	public GameObject deathEff; //クマノミ死エフェクト
+	private float timer;		//クマノミが消えるまでの時間を格納
+	private bool death = false; //クマノミがサメにあたったか判定
 
-	private bool maxaccel = false;			//加速判定
-	private bool esccheck = false;			//Esc判定
-	public bool attack = false;				//攻撃判定
-	private bool Enter = false;						//当たり判定
+	private bool myrotate = false; //角度を保存するかどうか
+	float AnglesX; //角度X
+	float AnglesY; //角度Y
+
 
 	Rigidbody rb;
 	CharacterController characterController;
@@ -87,10 +91,7 @@ public class Player : MonoBehaviour {
 			movespeed -= accel;
 		}
 
-		//移動
-		if (Enter == false) {
-			transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
-		}
+		transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
 
 		//マウスカーソル表示
 		if (Input.GetKeyDown (KeyCode.Escape) && esccheck == false) {
@@ -108,17 +109,30 @@ public class Player : MonoBehaviour {
 		if (Input.GetMouseButton(0)) {
 			attack = true;
 		}
+
+		//クマノミ削除処理
+		if (death == true && Time.time - timer > 2) {
+			Destroy (gameObject);
+			death = false;
+		}
 	}
 
-	//サメがオブジェクトに当たった時
+	//サメがあたったとき
 	void OnCollisionEnter(Collision collision){
-		//if (collision.gameObject.name == "Seabed") {
-			Enter = true;
-		//}
+		if (collision.gameObject.name == "kumanomi") {
+			timer = Time.time;
+			Instantiate (deathEff, transform.position, Quaternion.identity);
+			death = true;
+		} else if (myrotate == false){
+			AnglesX = this.transform.localEulerAngles.x;
+			AnglesY = this.transform.localEulerAngles.y;
+			myrotate = true;
+		}
 	}
 
-	//サメがオブジェクトから離れた時
+	//オブジェクトが離れた時
 	void OnCollisionExit(Collision collision) {
-		Enter = false;
+		transform.Rotate(AnglesX, AnglesY, 0 * Time.deltaTime);
+		myrotate = false;
 	}
 }

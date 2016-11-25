@@ -448,11 +448,10 @@ GameObject:
   - 95: {fileID: 350352269}
   - 23: {fileID: 350352267}
   - 64: {fileID: 350352268}
-  - 136: {fileID: 350352272}
   - 114: {fileID: 350352266}
   - 54: {fileID: 350352271}
   m_Layer: 0
-  m_Name: shark
+  m_Name: shakn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -473,6 +472,7 @@ MonoBehaviour:
   maxspeed: 4
   accel: 0.5
   attack: 0
+  deathEff: {fileID: 1000012646875688, guid: b03cfdef8d7bd804baf3e75f3b32a95a, type: 2}
 --- !u!23 &350352267
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -545,6 +545,7 @@ Transform:
   m_Children:
   - {fileID: 1916194836}
   - {fileID: 8895018}
+  - {fileID: 1554811922}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!54 &350352271
@@ -562,19 +563,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &350352272
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 350352265}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 30
-  m_Height: 100
-  m_Direction: 2
-  m_Center: {x: 0, y: -3, z: -50}
 --- !u!1 &357505545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1372,47 @@ Transform:
   - {fileID: 357505546}
   m_Father: {fileID: 1746858572}
   m_RootOrder: 0
+--- !u!1 &1554811921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1554811922}
+  - 135: {fileID: 1554811923}
+  m_Layer: 0
+  m_Name: collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1554811922
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1554811921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 350352270}
+  m_RootOrder: 2
+--- !u!135 &1554811923
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1554811921}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 55
+  m_Center: {x: 0, y: 0, z: -20}
 --- !u!1 &1564561707
 GameObject:
   m_ObjectHideFlags: 0
