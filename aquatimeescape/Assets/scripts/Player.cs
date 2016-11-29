@@ -1,32 +1,30 @@
-﻿/*
+﻿/*************************************
 サメくん移動プログラム
 InputManager Stamina Animator 連携
 
 長谷川弘明
-*/
+
+11/29更新
+詐欺士
+*************************************/
 using UnityEngine;
 using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	public float rotationSpeed = 1f;
-	float maxAngleX = 40;
-	float minAngleX = -40;
-	public static float movespeed = 1f;
-	private bool maxaccel = false;
-	public float maxspeed;
-	public float accel = 0.1f;
-	public static float defaltspeed = 1f;
-	private bool esccheck = false;
-	public bool attack = false;
+	public float rotationSpeed = 1f;		//自身の回転速度
+	float maxAngleX = 40;					//上回転制限
+	float minAngleX = -40;					//下回転制限
 
-	public GameObject deathEff; //クマノミ死エフェクト
-	private float timer;		//クマノミが消えるまでの時間を格納
-	private bool death = false; //クマノミがサメにあたったか判定
+	public static float movespeed = 1f;		//移動速度
+	public float maxspeed;					//最大速度
+	public float accel = 0.1f;				//加速度
+	public static float defaltspeed = 1f;	//初期速度
 
-	private bool myrotate = false; //角度を保存するかどうか
-	float AnglesX; //角度X
-	float AnglesY; //角度Y
+	private bool maxaccel = false;			//加速判定
+	private bool esccheck = false;			//ESC判定
+	public bool attack = false;				//攻撃判定
+	private bool ColliEnter = false;		//当たり判定
 
 
 	Rigidbody rb;
@@ -91,7 +89,10 @@ public class Player : MonoBehaviour {
 			movespeed -= accel;
 		}
 
-		transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
+		//地形に当たっていない時に移動
+		if (ColliEnter == false) {
+			transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
+		}
 
 		//マウスカーソル表示
 		if (Input.GetKeyDown (KeyCode.Escape) && esccheck == false) {
@@ -110,29 +111,15 @@ public class Player : MonoBehaviour {
 			attack = true;
 		}
 
-		//クマノミ削除処理
-		if (death == true && Time.time - timer > 2) {
-			Destroy (gameObject);
-			death = false;
-		}
 	}
 
 	//サメがあたったとき
 	void OnCollisionEnter(Collision collision){
-		if (collision.gameObject.name == "kumanomi") {
-			timer = Time.time;
-			Instantiate (deathEff, transform.position, Quaternion.identity);
-			death = true;
-		} else if (myrotate == false){
-			AnglesX = this.transform.localEulerAngles.x;
-			AnglesY = this.transform.localEulerAngles.y;
-			myrotate = true;
-		}
+		ColliEnter = true;
 	}
 
 	//オブジェクトが離れた時
 	void OnCollisionExit(Collision collision) {
-		transform.Rotate(AnglesX, AnglesY, 0 * Time.deltaTime);
-		myrotate = false;
+		ColliEnter = false;
 	}
 }
