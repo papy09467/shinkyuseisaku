@@ -2,21 +2,32 @@
 using System.Collections;
 
 public class Kumanomi : MonoBehaviour {
-	Vector3 patrol = Vector3.zero;	//巡回ポイント設定
-	public float radius = 5;
-	private float circle_x = 0;
-	private float circle_y = 0;
+
+	public GameObject deathEff; //クマノミ死エフェクト
+	private float timer;		//クマノミが消えるまでの時間を格納
+	private bool death = false; //クマノミがサメにあたったか判定
 
 	//CharacterController _controller;
 	void Start () {
-		//_controller = GetComponent<CharacterController> ();
-		Vector3 myTransform = this.transform.position;	//自身の位置を参照
-		patrol.x = myTransform.x + radius;					
+					
 	}
 
 	// Update is called once per frame
 	void Update () {
+		//クマノミ削除処理
+		if (death == true && Time.time - timer > 2) {
+			Destroy (gameObject);
+			death = false;
+		}
 
+	}
+
+	void OnCollisionEnter(Collision collision){
+		if (collision.gameObject.name == "collider") {
+			timer = Time.time;
+			Instantiate (deathEff, transform.position, Quaternion.identity);
+			death = true;
+		}
 	}
 }
 
