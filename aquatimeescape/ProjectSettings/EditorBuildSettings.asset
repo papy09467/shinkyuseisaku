@@ -9,3 +9,7 @@ EditorBuildSettings:
     path: Assets/Scene/title.unity
   - enabled: 1
     path: Assets/Scene/training_wait.unity
+  - enabled: 1
+    path: Assets/Scene/training_scene.unity
+  - enabled: 1
+    path: Assets/Scene/LoadScene.unity

@@ -81,3 +81,4 @@ C:\Users\16147007\Desktop\shinkyuseisaku\aquatimeescape\Temp\bin\Debug\UnityEngi
 C:\Users\16147007\Desktop\shinkyuseisaku\aquatimeescape\Temp\bin\Debug\UnityEngine.Networking.xml
 C:\Users\16147007\Desktop\shinkyuseisaku\aquatimeescape\obj\Debug\Assembly-CSharp.dll
 C:\Users\16147007\Desktop\shinkyuseisaku\aquatimeescape\obj\Debug\Assembly-CSharp.pdb
+C:\Users\16147007\Desktop\shinkyuseisaku\aquatimeescape\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache

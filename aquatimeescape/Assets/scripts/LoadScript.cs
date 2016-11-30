@@ -11,7 +11,7 @@ public class LoadScript : MonoBehaviour {
 	AsyncOperation async;
 	// Use this for initialization
 	IEnumerator Start () {
-		async = Application.LoadLevelAsync ("title");
+		async = Application.LoadLevelAsync ("training_scene");
 		//yield return async;
 		//Debug.Log ("");
 		async.allowSceneActivation = false;

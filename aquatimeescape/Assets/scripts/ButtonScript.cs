@@ -12,4 +12,10 @@ public class ButtonScript : MonoBehaviour {
 	public void OptionBtn(){
 		//CallScript.Scene ("");
 	}
+	public void KumanomiBtn(){
+		//CallScript.Scene("");
+	}
+	public void SharkBtn(){
+		CallScript.Scene ("LoadScene");
+	}
 }
