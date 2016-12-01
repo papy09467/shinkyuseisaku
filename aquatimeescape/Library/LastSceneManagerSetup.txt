@@ -1,4 +1,13 @@
 sceneSetups:
-- path: Assets/Scene/training_wait.unity
+- path: Assets/Scene/training_scene.unity
+  isLoaded: 1
+  isActive: 0
+- path: Assets/Scene/Level_scene.unity
   isLoaded: 1
   isActive: 1
+- path: Assets/Scene/title.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scene/shark_scene.unity
+  isLoaded: 1
+  isActive: 0

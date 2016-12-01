@@ -38,7 +38,7 @@ struct Input {
 void vert (inout appdata_full v) {
     float phase = _Time * 30.0;
     float4 wpos = mul( unity_ObjectToWorld, v.vertex);
-    float offset = (wpos.x + (wpos.z * 0.2)) * 0.5;
+    float offset = (wpos.x + (wpos.z * 0.4)) * 0.7;
     wpos.y = sin(phase + offset) * 0.1;
     v.vertex = mul(unity_WorldToObject, wpos);
 }
@@ -52,14 +52,14 @@ void surf (Input IN, inout SurfaceOutput o) {
 
     //流れる速度
     fixed2 uv = IN.uv_MainTex;
-	uv.x += 0.4 * _Time;
-	uv.y += 0.7 * _Time;
+	uv.x += 0.01 * _Time;
+	uv.y += 0.02 * _Time;
 	o.Albedo += tex2D (_MainTex, uv);
 
 	//発光調整
     fixed4 tex = tex2D(_MainTex, IN.uv_MainTex);
     fixed4 c = tex * _Color;
-    o.Emission = c.rgb * 0.01;
+    o.Emission = c.rgb * 0.005;
 
     //透明度
     o.Alpha = 1.0;
