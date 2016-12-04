@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Kumanomi : MonoBehaviour {
 
 	public GameObject deathEff; //クマノミ死エフェクト
+	public Text  gameOverText;
+	public GameObject meshObj;
 
 	//CharacterController _controller;
 	void Start () {
@@ -17,9 +20,16 @@ public class Kumanomi : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision){
 		if (collision.gameObject.name == "shakn") {
+			Invoke ("SceneMove", 3f);
+			gameOverText.text = "体験版はここまでです。";
 			Instantiate (deathEff, transform.position, Quaternion.identity);
-			Destroy (gameObject);
+			meshObj.SetActive (false);
+			//Destroy (gameObject);
 		}
+	}
+	void SceneMove(){
+		CallScript.Scene("title");
+		Destroy (gameObject);
 	}
 }
 
