@@ -111,6 +111,11 @@ public class Player : MonoBehaviour {
 			attack = true;
 		}
 
+		if(Input.GetKey(KeyCode.Delete)){
+			CallScript.Scene("title");
+			Destroy (gameObject);
+		}
+
 	}
 
 	//サメがあたったとき
