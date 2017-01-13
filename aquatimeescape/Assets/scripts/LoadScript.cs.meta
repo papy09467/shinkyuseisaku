@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: ba77ad6bebb690043bc90836e8920467
-timeCreated: 1480475127
+timeCreated: 1484282762
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - loadingText: {instanceID: 0}
+  - loadingBar: {instanceID: 0}
+  - message: {instanceID: 0}
+  - kumanomi: {fileID: 1000011800629736, guid: 2d9f9914aad4f7b4bb83696a58d04cc5, type: 2}
+  - shark: {fileID: 1000011427418756, guid: e5162ecdffea0c547bc930b373ac6632, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

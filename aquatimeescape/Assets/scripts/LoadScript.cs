@@ -7,11 +7,28 @@ public class LoadScript : MonoBehaviour {
 	public Image loadingBar;
 	public Text message;
 
+	public enum playerType
+	{
+		none,
+		kumanomi,
+		shark,
+	} public static playerType playerType_p=playerType.none;
+
+	public static void KumanomiBtn_Load(){
+		playerType_p = playerType.kumanomi;
+	}
+	public static void SharkBtn_Load(){
+		playerType_p = playerType.shark;
+	}
+
 	private bool canSceneChange = false;
 	AsyncOperation async;
 	// Use this for initialization
 	IEnumerator Start () {
 		async = Application.LoadLevelAsync ("training_scene");
+
+
+
 		//yield return async;
 		//Debug.Log ("");
 		async.allowSceneActivation = false;
@@ -40,5 +57,8 @@ public class LoadScript : MonoBehaviour {
 				async.allowSceneActivation = true; 
 			}
 		}
+
+			
+
 	}
 }
