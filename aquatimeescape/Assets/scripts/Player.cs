@@ -25,6 +25,7 @@ public class Player : MonoBehaviour {
 	private bool esccheck = false;			//ESC判定
 	public bool attack = false;				//攻撃判定
 	private bool ColliEnter = false;		//当たり判定
+	private GameObject DashEffect;			//エフェクト用
 
 
 	Rigidbody rb;
@@ -43,6 +44,8 @@ public class Player : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		inputManager = FindObjectOfType<InputManager> ();
 		animator = GetComponent<Animator> ();
+		DashEffect = GameObject.Find ("Dash_eff");
+		DashEffect.SetActive (false);
 	}
 
 	// Update is called once per frame
@@ -73,11 +76,13 @@ public class Player : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.A) && maxaccel == false) {
 			maxaccel = true;
 			inputManager.Moved ();
+			DashEffect.SetActive (true);
 		}
 
 		if (Input.GetKeyUp (KeyCode.A)) {
 			maxaccel = false;
 			inputManager.MoveFin ();
+			DashEffect.SetActive (false);
 		}
 				
 		//加速減速処理(maxaccel true or else)
