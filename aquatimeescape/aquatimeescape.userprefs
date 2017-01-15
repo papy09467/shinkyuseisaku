@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\FollowCamera.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Warp.cs">
     <Files>
       <File FileName="Assets\scripts\Player.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\water.shader" Line="1" Column="1" />
-      <File FileName="Assets\scripts\FollowCamera.cs" Line="46" Column="42" />
+      <File FileName="Assets\scripts\FollowCamera.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\InputManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Stamina.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Kumanomi.cs" Line="1" Column="1" />
@@ -14,6 +14,8 @@
       <File FileName="Assets\scripts\LightMove.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\ButtonScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LoadScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\K_FollowCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Warp.cs" Line="12" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

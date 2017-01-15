@@ -53,12 +53,14 @@
      <Compile Include="Assets\scripts\Icon_change_2p.cs" />
      <Compile Include="Assets\scripts\Icon_change_3p.cs" />
      <Compile Include="Assets\scripts\InputManager.cs" />
+     <Compile Include="Assets\scripts\K_FollowCamera.cs" />
      <Compile Include="Assets\scripts\Kumanomi.cs" />
      <Compile Include="Assets\scripts\LightMove.cs" />
      <Compile Include="Assets\scripts\LoadScript.cs" />
      <Compile Include="Assets\scripts\Player.cs" />
      <Compile Include="Assets\scripts\PlayerMake.cs" />
      <Compile Include="Assets\scripts\Stamina.cs" />
+     <Compile Include="Assets\scripts\Warp.cs" />
      <None Include="Assets\scripts\water.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/FreeSoft/unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
