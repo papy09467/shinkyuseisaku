@@ -17,7 +17,7 @@ public class Kumanomi : MonoBehaviour {
 	public static float defaltspeed = 1f;	//初期速度
 
 	private bool maxaccel = false;			//加速判定
-	private bool esccheck = false;			//ESC判定
+	//private bool esccheck = false;			//ESC判定
 	public bool attack = false;				//攻撃判定
 	private bool ColliEnter = false;		//当たり判定
 	private GameObject DashEffect;			//エフェクト用
@@ -91,7 +91,7 @@ public class Kumanomi : MonoBehaviour {
 
 		//地形に当たっていない時に移動
 		if (ColliEnter == false) {
-			transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
+			transform.position += transform.TransformDirection (Vector3.right) * movespeed;
 		}
 	}
 
