@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI; // UIコンポーネントの使用
+using System.Collections.Generic;
 
 public class Menu : MonoBehaviour {
 	Button[] menu_b = new Button[3];
+	public List<AudioClip> audioClip = new List<AudioClip>();
+
+	AudioSource audioSource; 
 
 	void Start () {
 		// ボタンコンポーネントの取得
@@ -13,6 +17,8 @@ public class Menu : MonoBehaviour {
 
 		// 最初に選択状態にしたいボタンの設定
 		menu_b[0].Select();
+
+		audioSource = gameObject.AddComponent<AudioSource>();
 	}
 
 	void Update () {
