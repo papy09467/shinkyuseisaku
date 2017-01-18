@@ -8,8 +8,8 @@ public class Kumanomi : MonoBehaviour {
 	public Text  gameOverText;
 	public GameObject meshObj;
 	public float rotationSpeed = 1f;		//自身の回転速度
-	float maxAngleX = 40;					//上回転制限
-	float minAngleX = -40;					//下回転制限
+	public float maxAngleX;					//上回転制限
+	public float minAngleX;					//下回転制限
 
 	public static float movespeed = 1f;		//移動速度
 	public float maxspeed;					//最大速度
@@ -49,9 +49,6 @@ public class Kumanomi : MonoBehaviour {
 		animator.SetFloat ("Speed", movespeed);
 		animator.SetBool ("Attacking", attack);
 
-		//inputManager.GameStart ();
-		direction.y = -direction.y;
-
 		//縦回転制限
 		float rotateX = (transform.eulerAngles.x  > 180)? transform.eulerAngles.x -360 : transform.eulerAngles.x;
 		float angleX = Mathf.Clamp (rotateX + direction.y * rotationSpeed, minAngleX, maxAngleX);
@@ -89,7 +86,7 @@ public class Kumanomi : MonoBehaviour {
 			movespeed -= accel;
 		}
 
-		//地形に当たっていない時に移動
+		//移動 (地形に当たっていない時に)
 		if (ColliEnter == false) {
 			transform.position += transform.TransformDirection (Vector3.right) * movespeed;
 		}

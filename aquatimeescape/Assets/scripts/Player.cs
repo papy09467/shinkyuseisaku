@@ -94,7 +94,7 @@ public class Player : MonoBehaviour {
 			movespeed -= accel;
 		}
 
-		//地形に当たっていない時に移動
+		//移動(地形に当たっていない時に)
 		if (ColliEnter == false) {
 			transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
 		}
