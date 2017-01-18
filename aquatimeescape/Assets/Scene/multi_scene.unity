@@ -2010,7 +2010,7 @@ MonoBehaviour:
   distance: 0.25
   rotAngle: 180
   lookTarget: {fileID: 1392581946}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 4, z: 0}
   cameraRate: 0.5
 --- !u!81 &94346411
 AudioListener:
@@ -11479,7 +11479,9 @@ MonoBehaviour:
   deathEff: {fileID: 0}
   gameOverText: {fileID: 0}
   meshObj: {fileID: 0}
-  rotationSpeed: 1
+  rotationSpeed: 2
+  maxAngleX: 50
+  minAngleX: -50
   maxspeed: 0
   accel: 0.1
   attack: 0
