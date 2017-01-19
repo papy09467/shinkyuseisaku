@@ -88,7 +88,7 @@ public class Kumanomi : MonoBehaviour {
 
 		//移動 (地形に当たっていない時に)
 		if (ColliEnter == false) {
-			transform.position += transform.TransformDirection (Vector3.right) * movespeed;
+			transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
 		}
 	}
 
