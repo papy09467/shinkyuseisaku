@@ -17,8 +17,8 @@ public class Wait_Scene : MonoBehaviour {
 
 	void Start () {
 				// ボタンコンポーネントの取得（選択ＵＩ）
-				menu_w[0] = GameObject.Find ("/Canvas/Button4").GetComponent<Button> ();
-				menu_w[1] = GameObject.Find ("/Canvas/Button5").GetComponent<Button> ();
+				menu_w[0] = GameObject.Find ("Button4").GetComponent<Button> ();
+				menu_w[1] = GameObject.Find ("Button5").GetComponent<Button> ();
 
 		// 最初に選択状態にしたいボタンの設定
 				menu_w [0].Select();
@@ -27,19 +27,11 @@ public class Wait_Scene : MonoBehaviour {
 	}
 
 	void Update () {
-		int i = 0;
 		Vector3 Menu_dir = new Vector3 (Input.GetAxisRaw ("1pHorizontal"), Input.GetAxisRaw ("1pVertical"), 0);	//コントローラーの入力取得
 
-				//待機画面のセレクト処理
-				if (Menu_dir.x == 1) {
-					i = 0;
-					menu_w[i].Select();
-				} else if (Menu_dir.x == -1) {
-					i = 1;
-					menu_w[i].Select();
-				}
 
-		Input.GetButtonDown ("1pAccel");
-
+		if (Input.GetButtonDown ("1pAccel")) {
+			audioSource.PlayOneShot (audioClip [0]);
+		}
 	}
 }

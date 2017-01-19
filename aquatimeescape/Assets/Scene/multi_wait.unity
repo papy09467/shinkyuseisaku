@@ -14,10 +14,10 @@ SceneSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 7
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.09530935, g: 0.5481621, b: 0.6172414, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.002
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -256,8 +256,9 @@ Transform:
   - {fileID: 77309564}
   - {fileID: 1129375919}
   - {fileID: 378313200}
+  - {fileID: 1663035347}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &378313197
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +363,7 @@ Light:
   serializedVersion: 7
   m_Type: 1
   m_Color: {r: 0.021572253, g: 0.62177634, b: 0.97794116, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.2
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -489,7 +490,7 @@ Transform:
   - {fileID: 1184699601}
   - {fileID: 1896676860}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1100759028
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,8 +796,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: -17.806002, y: -329.167, z: -359.499}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 378005217}
+  m_RootOrder: 3
 --- !u!81 &1663035348
 AudioListener:
   m_ObjectHideFlags: 0
@@ -840,7 +841,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 39
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -924,7 +925,7 @@ Light:
   serializedVersion: 7
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.3
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 500

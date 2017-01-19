@@ -4,7 +4,7 @@ using System.Collections;
 public class ButtonScript : MonoBehaviour {
 
 	public void MultiPlayerBtn(){
-		CallScript.Scene("multi_wait");
+		CallScript.Scene ("multi_wait");
 	}
 	public void TrainingBtn(){
 		CallScript.Scene("training_wait");
@@ -28,5 +28,6 @@ public class ButtonScript : MonoBehaviour {
 		LoadScript.SharkBtn_Load ();
 		CallScript.Scene ("multi_scene");
 	}
-}
+		
+ }
 
