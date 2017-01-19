@@ -50,7 +50,7 @@ public class Kumanomi : MonoBehaviour {
 		animator.SetBool ("Attacking", attack);
 
 		//縦回転制限
-		float rotateX = (transform.eulerAngles.x  > 180)? transform.eulerAngles.x -360 : transform.eulerAngles.x;
+		float rotateX = (transform.eulerAngles.z  > 180)? transform.eulerAngles.z -360 : transform.eulerAngles.z;
 		float angleX = Mathf.Clamp (rotateX + direction.y * rotationSpeed, minAngleX, maxAngleX);
 		angleX = (angleX < 0) ? angleX + 360 : angleX;
 
