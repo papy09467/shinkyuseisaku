@@ -30,7 +30,6 @@ public class Wait_Scene : MonoBehaviour {
 		int i = 0;
 		Vector3 Menu_dir = new Vector3 (Input.GetAxisRaw ("1pHorizontal"), Input.GetAxisRaw ("1pVertical"), 0);	//コントローラーの入力取得
 
-
 				//待機画面のセレクト処理
 				if (Menu_dir.x == 1) {
 					i = 0;

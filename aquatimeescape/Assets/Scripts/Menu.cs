@@ -65,7 +65,9 @@ public class Menu : MonoBehaviour {
 //			menu_w [i].Select();
 //		}
 
-		Input.GetButtonDown ("1pAccel");
+		if (Input.GetButtonDown ("1pAccel")) {
+			audioSource.PlayOneShot (audioClip [0]);
+		}
 			
 	}
 }
