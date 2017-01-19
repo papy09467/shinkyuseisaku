@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/********************
+ＵＩ画面の動きとＢＧＭ
+長谷川弘明
+
+1/19更新
+*********************/
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI; // UIコンポーネントの使用
 using System.Collections.Generic;
@@ -23,8 +29,9 @@ public class Menu : MonoBehaviour {
 
 	void Update () {
 		int i = 0;
-		Vector3 Menu_dir = new Vector3 (Input.GetAxisRaw ("1pHorizontal"), Input.GetAxisRaw ("1pVertical"), 0);
+		Vector3 Menu_dir = new Vector3 (Input.GetAxisRaw ("1pHorizontal"), Input.GetAxisRaw ("1pVertical"), 0);　//コントローラーの入力取得
 
+		//タイトル画面のセレクト
 		if (Menu_dir.y == 1) {
 			if (i == 0) {
 				i = 2;
@@ -42,5 +49,8 @@ public class Menu : MonoBehaviour {
 				menu_b[i].Select();
 			}
 		}
+
+		Input.GetButtonDown ("1pAccel");
+			
 	}
 }
