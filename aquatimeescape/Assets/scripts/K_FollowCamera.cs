@@ -36,8 +36,8 @@ public class K_FollowCamera : MonoBehaviour {
 
 		if (lookTarget != null && cameracheck == false) {
 			Vector3 lookPosition = lookTarget.position + offset;
-			Vector3 relativePos = Quaternion.Euler (lookTarget.eulerAngles.x, lookTarget.eulerAngles.y, 0) * new Vector3 (-100, 6, -distance * 2);
-			transform.position =lookPosition + (relativePos / 2) ;
+			Vector3 relativePos = Quaternion.Euler (lookTarget.eulerAngles.x, lookTarget.eulerAngles.y, 0) * new Vector3 ( 0, 6, -distance * 4);
+			transform.position =lookPosition + (relativePos / 4);
 			transform.LookAt (lookPosition);
 		}
 

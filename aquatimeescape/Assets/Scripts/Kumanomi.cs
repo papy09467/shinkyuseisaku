@@ -21,7 +21,7 @@ public class Kumanomi : MonoBehaviour {
 	public bool attack = false;				//攻撃判定
 	private bool ColliEnter = false;		//当たり判定
 	private GameObject DashEffect;			//エフェクト用
-
+	public GameObject child_kumanomi;				//クマノミモデル用
 
 	Rigidbody rb;
 	CharacterController characterController;
@@ -35,10 +35,11 @@ public class Kumanomi : MonoBehaviour {
 	}
 
 	void Start () {
-		characterController = GetComponent<CharacterController> ();
-		rb = GetComponent<Rigidbody> ();
+		//characterController = GetComponent<CharacterController> ();
+		Debug.Log ("Child : " + child_kumanomi.name);
+		rb = child_kumanomi.GetComponent<Rigidbody> ();
 		inputManager = FindObjectOfType<InputManager> ();
-		animator = GetComponent<Animator> ();
+		animator = child_kumanomi.GetComponent<Animator> ();
 		DashEffect = GameObject.Find ("Dash_eff");
 		DashEffect.SetActive (false);
 	}
@@ -48,11 +49,13 @@ public class Kumanomi : MonoBehaviour {
 		Vector3 direction = new Vector3 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"), 0);
 		animator.SetFloat ("Speed", movespeed);
 		animator.SetBool ("Attacking", attack);
+		direction.y = -direction.y;
 
 		//縦回転制限
-		float rotateX = (transform.eulerAngles.z  > 180)? transform.eulerAngles.z -360 : transform.eulerAngles.z;
+		float rotateX = (transform.eulerAngles.x  > 180)? transform.eulerAngles.x -360 : transform.eulerAngles.x;
 		float angleX = Mathf.Clamp (rotateX + direction.y * rotationSpeed, minAngleX, maxAngleX);
 		angleX = (angleX < 0) ? angleX + 360 : angleX;
+		Debug.Log ("direction.y : " + direction.y);
 
 		//横回転制限
 		float rotateY = transform.eulerAngles.y;
@@ -62,7 +65,7 @@ public class Kumanomi : MonoBehaviour {
 		animator.SetFloat("up_down",transform.rotation.x);
 
 		//回転
-		transform.rotation = Quaternion.Euler (0, angleY, angleX);
+		transform.rotation = Quaternion.Euler (angleX, angleY, 0);
 
 		//加速
 		if (Input.GetKeyDown (KeyCode.A) && maxaccel == false) {
