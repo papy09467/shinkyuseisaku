@@ -12,13 +12,13 @@ public class K_FollowCamera : MonoBehaviour {
 	float accelsp = Player.movespeed - Player.defaltspeed;
 	public float cameraRate = 0.5f; 
 
+	private Vector3 last_relative_pos;
 
 	InputManager inputManager;
 
 	// Use this for initialization
 	void Start () {
 		inputManager = FindObjectOfType<InputManager> ();
-
 	}
 
 	// Update is called once per frame
@@ -36,8 +36,8 @@ public class K_FollowCamera : MonoBehaviour {
 
 		if (lookTarget != null && cameracheck == false) {
 			Vector3 lookPosition = lookTarget.position + offset;
-			Vector3 relativePos = Quaternion.Euler (lookTarget.eulerAngles.x, lookTarget.eulerAngles.y, 0) * new Vector3 ( 0, 6, -distance * 4);
-			transform.position =lookPosition + (relativePos / 4);
+			Vector3 relativePos = Quaternion.Euler (lookTarget.eulerAngles.x, lookTarget.eulerAngles.y, 0) * new Vector3 ( 0, 6, -distance * 2);
+			transform.position =lookPosition + (relativePos / 2) ;
 			transform.LookAt (lookPosition);
 		}
 

@@ -49,13 +49,14 @@ public class Kumanomi : MonoBehaviour {
 		Vector3 direction = new Vector3 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"), 0);
 		animator.SetFloat ("Speed", movespeed);
 		animator.SetBool ("Attacking", attack);
+
+
 		direction.y = -direction.y;
 
 		//縦回転制限
 		float rotateX = (transform.eulerAngles.x  > 180)? transform.eulerAngles.x -360 : transform.eulerAngles.x;
 		float angleX = Mathf.Clamp (rotateX + direction.y * rotationSpeed, minAngleX, maxAngleX);
 		angleX = (angleX < 0) ? angleX + 360 : angleX;
-		Debug.Log ("direction.y : " + direction.y);
 
 		//横回転制限
 		float rotateY = transform.eulerAngles.y;
