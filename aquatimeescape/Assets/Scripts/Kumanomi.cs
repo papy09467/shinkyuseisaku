@@ -46,10 +46,9 @@ public class Kumanomi : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Vector3 direction = new Vector3 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"), 0);
+		Vector3 direction = new Vector3 (Input.GetAxisRaw ("1pHorizontal"), Input.GetAxisRaw ("1pVertical"), 0);
 		animator.SetFloat ("Speed", movespeed);
 		animator.SetBool ("Attacking", attack);
-
 
 		direction.y = -direction.y;
 
@@ -69,13 +68,13 @@ public class Kumanomi : MonoBehaviour {
 		transform.rotation = Quaternion.Euler (angleX, angleY, 0);
 
 		//加速
-		if (Input.GetKeyDown (KeyCode.A) && maxaccel == false) {
+		if (Input.GetButtonDown ("1pAccel") && maxaccel == false) {
 			maxaccel = true;
 			inputManager.Moved ();
 			DashEffect.SetActive (true);
 		}
 
-		if (Input.GetKeyUp (KeyCode.A)) {
+		if (Input.GetButtonUp ("1pAccel")) {
 			maxaccel = false;
 			inputManager.MoveFin ();
 			DashEffect.SetActive (false);
