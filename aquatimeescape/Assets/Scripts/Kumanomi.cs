@@ -50,12 +50,16 @@ public class Kumanomi : MonoBehaviour {
 		animator.SetFloat ("Speed", movespeed);
 		animator.SetBool ("Attacking", attack);
 
-		direction.y = -direction.y;
-
 		//縦回転制限
-		float rotateX = (transform.eulerAngles.x  > 180)? transform.eulerAngles.x -360 : transform.eulerAngles.x;
+		//float rotateX = (transform.eulerAngles.x  > 180)? transform.eulerAngles.x -360 : transform.eulerAngles.x;
+		if (transform.eulerAngles.x > 180) {
+			float rotateX = transform.eulerAngles.x - 360;
+		}
 		float angleX = Mathf.Clamp (rotateX + direction.y * rotationSpeed, minAngleX, maxAngleX);
-		angleX = (angleX < 0) ? angleX + 360 : angleX;
+		if (angleX < 0) {
+			angleX = angleX + 360;
+		}
+		//angleX = (angleX < 0) ? angleX + 360 : angleX;
 
 		//横回転制限
 		float rotateY = transform.eulerAngles.y;
@@ -65,8 +69,9 @@ public class Kumanomi : MonoBehaviour {
 		animator.SetFloat("up_down",transform.rotation.x);
 
 		//回転
-		transform.rotation = Quaternion.Euler (angleX, angleY, 0);
-
+		if (direction.x != 0) {
+			transform.rotation = Quaternion.Euler (angleX, angleY, 0);
+		}
 		//加速
 		if (Input.GetButtonDown ("1pAccel") && maxaccel == false) {
 			maxaccel = true;

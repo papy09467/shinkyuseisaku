@@ -23,6 +23,7 @@ public class K_FollowCamera : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		SetTarget (lookTarget);
 		bool cameracheck = false;
 		//float anglePerPixel = rotAngle / (float)Screen.width;
 		//Vector2 delta = inputManager.GetDeltaPosition ();
@@ -41,6 +42,7 @@ public class K_FollowCamera : MonoBehaviour {
 		}
 
 	}
+
 	public void SetTarget(Transform target){
 		lookTarget = target;
 	}
