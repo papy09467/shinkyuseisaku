@@ -5,15 +5,12 @@ public class InputManager : MonoBehaviour {
 
 	Vector2 delta = Vector2.zero;
 	public bool moved = false;
-	float accelsp;
+	public bool k_moved = false;
 	public bool st_out = false;
 	public bool heal_st = false;
+	public bool k_st_out = false;
+	public bool k_heal_st = false;
 
-	void Update () {
-
-
-
-	}
 
 	public bool Clicked(){
 		if(!moved && Input.GetButtonUp("Fire1"))
@@ -36,6 +33,16 @@ public class InputManager : MonoBehaviour {
 		moved = false;
 		return moved;
 	}
+	//クマノミ用ムーブ
+	public bool K_Moved(){		
+		k_moved = true;
+		return moved;
+	}
+
+	public bool K_MoveFin(){
+		k_moved = false;
+		return moved;
+	}
 
 	public bool St_out() {
 		
@@ -55,6 +62,26 @@ public class InputManager : MonoBehaviour {
 			heal_st = false;
 
 		return heal_st;
+	}
+	//クマノミ用
+	public bool K_St_out() {
+
+		if (k_st_out == false)
+			k_st_out = true;
+		else
+			k_st_out = false;
+
+		return k_st_out;
+	}
+
+	public bool K_Heal_st() {
+
+		if (k_heal_st == false)
+			k_heal_st = true;
+		else
+			k_heal_st = false;
+
+		return k_heal_st;
 	}	
 
 	public Vector2 GetCursorPosition(){

@@ -70,13 +70,13 @@ public class Kumanomi : MonoBehaviour {
 		//加速
 		if (Input.GetButtonDown ("1pAccel") && maxaccel == false) {
 			maxaccel = true;
-			inputManager.Moved ();
+			inputManager.K_Moved ();
 			DashEffect.SetActive (true);
 		}
 
 		if (Input.GetButtonUp ("1pAccel")) {
 			maxaccel = false;
-			inputManager.MoveFin ();
+			inputManager.K_MoveFin ();
 			DashEffect.SetActive (false);
 		}
 

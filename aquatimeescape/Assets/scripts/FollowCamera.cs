@@ -9,7 +9,6 @@ public class FollowCamera : MonoBehaviour {
 	//public float verticalAngle = 10.0f;
 	public Transform lookTarget;
 	public Vector3 offset = Vector3.zero;
-	float accelsp = Player.movespeed - Player.defaltspeed;
 	public float cameraRate = 0.5f; 
 
 
