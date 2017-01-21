@@ -95,18 +95,28 @@ public class Kumanomi : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision collision){
-		if (collision.gameObject.name == "shakn") {
-			Invoke ("SceneMove", 3f);
-			gameOverText.text = "体験版はここまでです。";
-			Instantiate (deathEff, transform.position, Quaternion.identity);
-			meshObj.SetActive (false);
-			//Destroy (gameObject);
-		}
-	}
+//	void OnCollisionEnter(Collision collision){
+//		if (collision.gameObject.name == "shakn") {
+//			Invoke ("SceneMove", 3f);
+//			gameOverText.text = "体験版はここまでです。";
+//			Instantiate (deathEff, transform.position, Quaternion.identity);
+//			meshObj.SetActive (false);
+//			//Destroy (gameObject);
+//		}
+//	}
 	void SceneMove(){
 		CallScript.Scene("title");
 		Destroy (gameObject);
+	}
+
+	//クマノミがあたったとき
+	void OnCollisionEnter(Collision collision){
+		ColliEnter = true;
+	}
+
+	//オブジェクトが離れた時
+	void OnCollisionExit(Collision collision) {
+		ColliEnter = false;
 	}
 }
 
