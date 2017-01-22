@@ -51,6 +51,11 @@ public class Kumanomi : MonoBehaviour {
 		animator.SetBool ("Attacking", attack);
 		float angleY = 0;
 
+		//移動 (地形に当たっていない時に)
+		if (ColliEnter == false) {
+			transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
+		}
+
 		//縦回転制限
 		float rotateX = (transform.eulerAngles.x  > 180)? transform.eulerAngles.x -360 : transform.eulerAngles.x;
 		float angleX = Mathf.Clamp (rotateX + direction.y * rotationSpeed, minAngleX, maxAngleX);
@@ -93,11 +98,7 @@ public class Kumanomi : MonoBehaviour {
 		} else if (defaltspeed < movespeed) {
 			movespeed -= accel;
 		}
-
-		//移動 (地形に当たっていない時に)
-		if (ColliEnter == false) {
-			transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
-		}
+			
 	}
 
 //	void OnCollisionEnter(Collision collision){
