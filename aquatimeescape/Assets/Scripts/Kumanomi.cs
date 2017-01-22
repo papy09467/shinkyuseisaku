@@ -49,22 +49,22 @@ public class Kumanomi : MonoBehaviour {
 		Vector3 direction = new Vector3 (Input.GetAxisRaw ("1pHorizontal"), Input.GetAxisRaw ("1pVertical"), 0);
 		animator.SetFloat ("Speed", movespeed);
 		animator.SetBool ("Attacking", attack);
+		float angleY = 0;
 
 		//縦回転制限
-		//float rotateX = (transform.eulerAngles.x  > 180)? transform.eulerAngles.x -360 : transform.eulerAngles.x;
-		if (transform.eulerAngles.x > 180) {
-			float rotateX = transform.eulerAngles.x - 360;
-		}
+		float rotateX = (transform.eulerAngles.x  > 180)? transform.eulerAngles.x -360 : transform.eulerAngles.x;
 		float angleX = Mathf.Clamp (rotateX + direction.y * rotationSpeed, minAngleX, maxAngleX);
-		if (angleX < 0) {
-			angleX = angleX + 360;
-		}
-		//angleX = (angleX < 0) ? angleX + 360 : angleX;
+		angleX = (angleX < 0) ? angleX + 360 : angleX;
 
 		//横回転制限
 		float rotateY = transform.eulerAngles.y;
-		float angleY = rotateY + direction.x * rotationSpeed;
-
+		if (direction.x > 0) {
+			angleY = rotateY + direction.x * rotationSpeed; 
+		} else if (direction.x < 0) {
+			angleY = rotateY - direction.x * rotationSpeed;
+		} else {
+			Debug.Log ("0がきてるよ");
+		}
 		//アニメーション設定
 		animator.SetFloat("up_down",transform.rotation.x);
 
