@@ -36,12 +36,12 @@ public class InputManager : MonoBehaviour {
 	//クマノミ用ムーブ
 	public bool K_Moved(){		
 		k_moved = true;
-		return moved;
+		return k_moved;
 	}
 
 	public bool K_MoveFin(){
 		k_moved = false;
-		return moved;
+		return k_moved;
 	}
 
 	public bool St_out() {

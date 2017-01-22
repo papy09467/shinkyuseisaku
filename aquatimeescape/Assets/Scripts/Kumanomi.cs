@@ -19,7 +19,7 @@ public class Kumanomi : MonoBehaviour {
 	private bool maxaccel = false;			//加速判定
 	//private bool esccheck = false;			//ESC判定
 	public bool attack = false;				//攻撃判定
-	private bool ColliEnter = false;		//当たり判定
+	public bool ColliEnter = false;		//当たり判定
 	private GameObject DashEffect;			//エフェクト用
 	public GameObject child_kumanomi;				//クマノミモデル用
 
@@ -46,7 +46,7 @@ public class Kumanomi : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Vector3 direction = new Vector3 (Input.GetAxisRaw ("1pHorizontal"), Input.GetAxisRaw ("1pVertical"), 0);
+
 		animator.SetFloat ("Speed", movespeed);
 		animator.SetBool ("Attacking", attack);
 		float angleY = 0;
@@ -58,18 +58,22 @@ public class Kumanomi : MonoBehaviour {
 
 		//縦回転制限
 		float rotateX = (transform.eulerAngles.x  > 180)? transform.eulerAngles.x -360 : transform.eulerAngles.x;
-		float angleX = Mathf.Clamp (rotateX + direction.y * rotationSpeed, minAngleX, maxAngleX);
+		float angleX = Mathf.Clamp (rotateX + Input.GetAxisRaw ("1pVertical") * rotationSpeed, minAngleX, maxAngleX);
 		angleX = (angleX < 0) ? angleX + 360 : angleX;
 
+		angleY = Input.GetAxisRaw ("1pHorizontal");
+
 		//横回転制限
-		float rotateY = transform.eulerAngles.y;
-		if (direction.x > 0) {
-			angleY = rotateY + direction.x * rotationSpeed; 
-		} else if (direction.x < 0) {
-			angleY = rotateY - direction.x * rotationSpeed;
-		} else {
-			Debug.Log ("0がきてるよ");
-		}
+//		float rotateY = transform.eulerAngles.y;
+//		if (direction.x > 0) {
+//			angleY = rotateY + direction.x * rotationSpeed;
+//			Debug.Log ("プラスがきてるよ");
+//		} else if (direction.x < 0) {
+//			angleY = rotateY - direction.x * rotationSpeed;
+//			Debug.Log ("マイナスになってるよ");
+//		} else {
+//			Debug.Log ("0がきてるよ");
+//		}
 		//アニメーション設定
 		animator.SetFloat("up_down",transform.rotation.x);
 
