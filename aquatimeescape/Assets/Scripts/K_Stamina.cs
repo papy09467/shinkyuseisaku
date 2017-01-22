@@ -43,7 +43,7 @@ public class K_Stamina : MonoBehaviour {
 
 		if (inputManager.k_moved == false) {
 			stGauge.fillAmount += healValue;
-			inputManager.Heal_st ();
+			inputManager.K_Heal_st ();
 		}
 
 	}
