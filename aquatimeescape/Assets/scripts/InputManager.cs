@@ -10,7 +10,8 @@ public class InputManager : MonoBehaviour {
 	public bool heal_st = false;
 	public bool k_st_out = false;
 	public bool k_heal_st = false;
-
+	public bool st_stopper = false;
+	public bool k_st_stopper = false;
 
 	public bool Clicked(){
 		if(!moved && Input.GetButtonUp("Fire1"))
@@ -91,6 +92,24 @@ public class InputManager : MonoBehaviour {
 	public bool GameStart(){
 		return true;
 	}
-		
+	//スタミナ減少時加速ストップ処理
+	public bool St_stop() {
 
+		if (st_stopper == false)
+			st_stopper = true;
+		else
+			st_stopper = false;
+
+		return st_stopper;
+	}
+
+	public bool K_St_stop() {
+
+		if (k_st_stopper == false)
+			k_st_stopper = true;
+		else
+			k_st_stopper = false;
+
+		return k_st_stopper;
+	}
 }

@@ -25,6 +25,8 @@ public class K_FollowCamera : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		float startCameraSpeed = maxCameraSpeed;
+
 		if (lookTarget != null ) {
 			// 目標座標
 			Vector3 lookPosition = lookTarget.position + offset;
@@ -41,7 +43,12 @@ public class K_FollowCamera : MonoBehaviour {
 				// 座標値を単位化
 				normalVec = Vector3.Normalize (normalVec);
 				// カメラの移動速度を掛けてカメラを移動
-				normalVec *= maxCameraSpeed;
+				if (inputManager.k_moved == true && maxCameraSpeed == startCameraSpeed) {
+					normalVec *= maxCameraSpeed;
+				} else if(inputManager.k_moved == false && maxCameraSpeed > startCameraSpeed) {
+					normalVec *= maxCameraSpeed;
+				}
+
 				// 前回の座標に移動量を加算
 				transform.position = last_transform.position + normalVec;
 			}

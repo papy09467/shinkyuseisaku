@@ -11,7 +11,7 @@ public class Kumanomi : MonoBehaviour {
 	public float maxAngleX;					//上回転制限
 	public float minAngleX;					//下回転制限
 
-	public static float movespeed = 1f;		//移動速度
+	public float movespeed = 1f;		//移動速度
 	public float maxspeed;					//最大速度
 	public float accel = 0.1f;				//加速度
 	public static float defaltspeed = 1f;	//初期速度
@@ -85,16 +85,20 @@ public class Kumanomi : MonoBehaviour {
 			transform.rotation = Quaternion.Euler (angleX, angleY, 0);
 		//}
 		//加速
-		if (Input.GetButtonDown ("1pAccel") && maxaccel == false) {
+		if (Input.GetButtonDown ("1pAccel") && maxaccel == false && inputManager.k_st_stopper == false && inputManager.k_st_out == false) {
 			maxaccel = true;
 			inputManager.K_Moved ();
 			DashEffect.SetActive (true);
 		}
 
-		if (Input.GetButtonUp ("1pAccel")) {
+		if (Input.GetButtonUp ("1pAccel") && maxaccel == true) {
 			maxaccel = false;
 			inputManager.K_MoveFin ();
 			DashEffect.SetActive (false);
+		}
+
+		if (inputManager.k_st_out == true) {
+			maxaccel = false;
 		}
 
 		//加速減速処理(maxaccel true or else)

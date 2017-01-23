@@ -2007,11 +2007,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808b70971a1754a419412b4e7c5c424e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 50
+  distance: 10
   rotAngle: 0
   lookTarget: {fileID: 611098107}
-  offset: {x: 0, y: 1.7, z: 0}
-  cameraRate: 0.5
+  offset: {x: 0, y: 0, z: 0}
+  maxCameraSpeed: 4.1
 --- !u!81 &94346411
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2079,12 +2079,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 94346409}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 87.55777, y: -202.10153, z: -219.4786}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 611098107}
-  m_RootOrder: 1
+  m_Father: {fileID: 230986592}
+  m_RootOrder: 0
 --- !u!1 &102428638
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,6 +2181,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1330648286}
   - {fileID: 1237259079}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -6147,6 +6148,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 94346415}
   - {fileID: 611098107}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -6222,19 +6224,18 @@ RectTransform:
 --- !u!114 &254389932
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000013186206464, guid: 92820e89836dec8488a2a35645cd66b4,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 254389930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e9950399d348344f89f476f6d85dce9, type: 3}
+  m_Script: {fileID: 11500000, guid: 53ada95a9de4ae4499e21550b5ec417d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 3
-  sthealTime: 3
-  stGauge: {fileID: 254389933}
-  stGaugeout: {fileID: 1126135099}
+  k_time: 0
+  sthealTime: 0
+  stGauge: {fileID: 0}
+  stGaugeout: {fileID: 0}
 --- !u!114 &254389933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6390,7 +6391,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 611098107}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!135 &327299799
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6891,10 +6892,9 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 719873592}
-  - {fileID: 94346415}
   - {fileID: 327299798}
   m_Father: {fileID: 230986592}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &611098108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6912,6 +6912,7 @@ MonoBehaviour:
   rotationSpeed: 1
   maxAngleX: 50
   minAngleX: -50
+  movespeed: 1
   maxspeed: 4
   accel: 0.1
   attack: 0
@@ -11830,9 +11831,8 @@ Transform:
   - {fileID: 1241900281}
   - {fileID: 189203493}
   - {fileID: 1566867102}
-  - {fileID: 1330648286}
   m_Father: {fileID: 126412133}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!54 &1237259080
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12137,12 +12137,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1330648285}
   m_LocalRotation: {x: 0.09584576, y: -0, z: -0, w: 0.9953962}
-  m_LocalPosition: {x: 0, y: -392, z: -52}
-  m_LocalScale: {x: 4, y: 4.4490557, z: 4.4490557}
+  m_LocalPosition: {x: 87.55777, y: -150.10153, z: -232.4786}
+  m_LocalScale: {x: 1, y: 1.1122639, z: 1.1122639}
   m_LocalEulerAnglesHint: {x: 11, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 1237259079}
-  m_RootOrder: 4
+  m_Father: {fileID: 126412133}
+  m_RootOrder: 0
 --- !u!114 &1330648287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12155,11 +12155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73bdec437c4b5f14cb2db4542194ea41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 60
-  rotAngle: 200
+  distance: 20
+  rotAngle: 0
   lookTarget: {fileID: 1241900281}
   offset: {x: 0, y: 0, z: 0}
-  cameraRate: 0.5
+  maxCameraSpeed: 4
 --- !u!81 &1330648288
 AudioListener:
   m_ObjectHideFlags: 0

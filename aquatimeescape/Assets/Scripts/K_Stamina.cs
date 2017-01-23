@@ -25,8 +25,10 @@ public class K_Stamina : MonoBehaviour {
 		//スタミナゲージ色変化
 		if (stGauge.fillAmount <= 0.3) {
 			stGaugeout.color = Color.red;
+			inputManager.K_St_stop ();
 		} else {
 			stGaugeout.color = Color.white;
+			inputManager.K_St_stop ();
 		}
 
 		if (stGauge.fillAmount == 0) {

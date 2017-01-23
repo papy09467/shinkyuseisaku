@@ -50,21 +50,21 @@ public class Player : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Vector3 direction = new Vector3 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"), 0);
 		animator.SetFloat ("Speed", movespeed);
 		animator.SetBool ("Attacking", attack);
+		float angleY = 0;
 
-		//inputManager.GameStart ();
-		direction.y = -direction.y;
+		//移動 (地形に当たっていない時に)
+		if (ColliEnter == false) {
+			transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
+		}
 
 		//縦回転制限
 		float rotateX = (transform.eulerAngles.x  > 180)? transform.eulerAngles.x -360 : transform.eulerAngles.x;
-		float angleX = Mathf.Clamp (rotateX + direction.y * rotationSpeed, minAngleX, maxAngleX);
+		float angleX = Mathf.Clamp (rotateX + Input.GetAxisRaw ("2pVertical") * rotationSpeed, minAngleX, maxAngleX);
 		angleX = (angleX < 0) ? angleX + 360 : angleX;
 
-		//横回転制限
-		float rotateY = transform.eulerAngles.y;
-		float angleY = rotateY + direction.x * rotationSpeed;
+		angleY = transform.eulerAngles.y + Input.GetAxisRaw ("2pHorizontal");
 
 		//アニメーション設定
 		animator.SetFloat("up_down",transform.rotation.x);
@@ -73,13 +73,13 @@ public class Player : MonoBehaviour {
 		transform.rotation = Quaternion.Euler (angleX, angleY, 0);
 
 		//加速
-		if (Input.GetKeyDown (KeyCode.A) && maxaccel == false) {
+		if (Input.GetButtonDown ("2pAccel") && maxaccel == false && inputManager.st_stopper == false && inputManager.st_out == false) {
 			maxaccel = true;
 			inputManager.Moved ();
 			DashEffect.SetActive (true);
 		}
 
-		if (Input.GetKeyUp (KeyCode.A)) {
+		if (Input.GetButtonUp ("2pAccel") && maxaccel == true) {
 			maxaccel = false;
 			inputManager.MoveFin ();
 			DashEffect.SetActive (false);
@@ -92,11 +92,6 @@ public class Player : MonoBehaviour {
 			}
 		} else if (defaltspeed < movespeed) {
 			movespeed -= accel;
-		}
-
-		//移動(地形に当たっていない時に)
-		if (ColliEnter == false) {
-			transform.position += transform.TransformDirection (Vector3.forward) * movespeed;
 		}
 
 		//マウスカーソル表示
