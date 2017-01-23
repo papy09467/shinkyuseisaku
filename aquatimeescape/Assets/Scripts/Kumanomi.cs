@@ -61,7 +61,7 @@ public class Kumanomi : MonoBehaviour {
 		float angleX = Mathf.Clamp (rotateX + Input.GetAxisRaw ("1pVertical") * rotationSpeed, minAngleX, maxAngleX);
 		angleX = (angleX < 0) ? angleX + 360 : angleX;
 
-		angleY = Input.GetAxisRaw ("1pHorizontal");
+		angleY = transform.eulerAngles.y + Input.GetAxisRaw ("1pHorizontal");
 
 		//横回転制限
 //		float rotateY = transform.eulerAngles.y;
@@ -105,24 +105,25 @@ public class Kumanomi : MonoBehaviour {
 			
 	}
 
-//	void OnCollisionEnter(Collision collision){
-//		if (collision.gameObject.name == "shakn") {
-//			Invoke ("SceneMove", 3f);
+	void OnCollisionEnter(Collision collision){
+		ColliEnter = true;
+		if (collision.gameObject.name == "shakn") {
+			Invoke ("SceneMove", 3f);
 //			gameOverText.text = "体験版はここまでです。";
-//			Instantiate (deathEff, transform.position, Quaternion.identity);
-//			meshObj.SetActive (false);
-//			//Destroy (gameObject);
-//		}
-//	}
+			Instantiate (deathEff, transform.position, Quaternion.identity);
+			meshObj.SetActive (false);
+			//Destroy (gameObject);
+		}
+	}
 	void SceneMove(){
 		CallScript.Scene("title");
 		Destroy (gameObject);
 	}
 
 	//クマノミがあたったとき
-	void OnCollisionEnter(Collision collision){
-		ColliEnter = true;
-	}
+//	void OnCollisionEnter(Collision collision){
+//		ColliEnter = true;
+//	}
 
 	//オブジェクトが離れた時
 	void OnCollisionExit(Collision collision) {
