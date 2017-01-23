@@ -78,9 +78,9 @@ public class Kumanomi : MonoBehaviour {
 		animator.SetFloat("up_down",transform.rotation.x);
 
 		//回転
-		if (direction.x != 0) {
+		//if (direction.x != 0) {
 			transform.rotation = Quaternion.Euler (angleX, angleY, 0);
-		}
+		//}
 		//加速
 		if (Input.GetButtonDown ("1pAccel") && maxaccel == false) {
 			maxaccel = true;
