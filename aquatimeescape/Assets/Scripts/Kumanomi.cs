@@ -4,9 +4,7 @@ using UnityEngine.UI;
 
 public class Kumanomi : MonoBehaviour {
 
-	public GameObject deathEff; //クマノミ死エフェクト
 	public Text  gameOverText;
-	public GameObject meshObj;
 	public float rotationSpeed = 1f;		//自身の回転速度
 	public float maxAngleX;					//上回転制限
 	public float minAngleX;					//下回転制限
@@ -27,7 +25,6 @@ public class Kumanomi : MonoBehaviour {
 	CharacterController characterController;
 	InputManager inputManager;
 	Animator animator;
-	GameObject winText;
 
 	// Use this for initialization
 	void Awake () {
@@ -43,8 +40,6 @@ public class Kumanomi : MonoBehaviour {
 		animator = child_kumanomi.GetComponent<Animator> ();
 		DashEffect = GameObject.Find ("Dash_eff");
 		DashEffect.SetActive (false);
-		winText = GameObject.Find ("Shark_win");
-		winText.SetActive (false);
 	}
 
 	// Update is called once per frame
@@ -114,14 +109,6 @@ public class Kumanomi : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision){
 		ColliEnter = true;
-		if (collision.gameObject.name == "shakn") {
-			Destroy (gameObject);
-			Invoke ("SceneMove", 3f);
-//			gameOverText.text = "体験版はここまでです。";
-			winText.SetActive (true);
-			Instantiate (deathEff, transform.position, Quaternion.identity);
-			meshObj.SetActive (false);
-		}
 	}
 	void SceneMove(){
 		CallScript.Scene("title");
