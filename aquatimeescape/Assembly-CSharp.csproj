@@ -64,7 +64,6 @@
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\Wait_Scene.cs" />
      <Compile Include="Assets\Scripts\Warp.cs" />
-     <Compile Include="Assets\Scripts\shark_hit.cs" />
      <None Include="Assets\Scripts\water.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Freesoft/unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
