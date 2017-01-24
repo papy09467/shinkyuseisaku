@@ -44,7 +44,7 @@ public class Player : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		inputManager = FindObjectOfType<InputManager> ();
 		animator = GetComponent<Animator> ();
-		DashEffect = GameObject.Find ("Dash_eff");
+		DashEffect = GameObject.Find ("shark_Dash_eff");
 		DashEffect.SetActive (false);
 	}
 
