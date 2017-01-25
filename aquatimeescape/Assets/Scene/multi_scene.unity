@@ -1922,7 +1922,7 @@ GameObject:
   - 4: {fileID: 61869033}
   m_Layer: 0
   m_Name: Armature
-  m_TagString: Untagged
+  m_TagString: Shark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2165,7 +2165,7 @@ GameObject:
   - 4: {fileID: 126412133}
   m_Layer: 0
   m_Name: shark_scene
-  m_TagString: Untagged
+  m_TagString: Shark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4115,7 +4115,7 @@ GameObject:
   - 135: {fileID: 189203494}
   m_Layer: 0
   m_Name: shark_collider
-  m_TagString: Untagged
+  m_TagString: Shark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6489,7 +6489,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 327299798}
   - 136: {fileID: 327299800}
-  - 114: {fileID: 327299799}
   m_Layer: 0
   m_Name: kumanomi_collider
   m_TagString: Untagged
@@ -6509,20 +6508,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 611098107}
-  m_RootOrder: 1
---- !u!114 &327299799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 327299797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf98e2e63a262914fb2ed2b342896fbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshObj: {fileID: 1000011800629736, guid: 2d9f9914aad4f7b4bb83696a58d04cc5, type: 2}
-  deathEff: {fileID: 1000011372036246, guid: 5856d549809d0754d938ebede7e5ce7a, type: 2}
+  m_RootOrder: 2
 --- !u!136 &327299800
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6635,7 +6621,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000010241017288, guid: a4b2520b5537d6841a517ee884763564, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1000010241017288, guid: a4b2520b5537d6841a517ee884763564, type: 2}
       propertyPath: m_Name
@@ -7024,8 +7010,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 719873592}
-  - {fileID: 327299798}
   - {fileID: 1566867102}
+  - {fileID: 327299798}
   m_Father: {fileID: 230986592}
   m_RootOrder: 1
 --- !u!114 &611098108
@@ -7050,6 +7036,8 @@ MonoBehaviour:
   ColliEnter: 0
   child_kumanomi: {fileID: 1000011800629736, guid: 2d9f9914aad4f7b4bb83696a58d04cc5,
     type: 2}
+  meshObj: {fileID: 1000011800629736, guid: 2d9f9914aad4f7b4bb83696a58d04cc5, type: 2}
+  deathEff: {fileID: 1000011372036246, guid: 5856d549809d0754d938ebede7e5ce7a, type: 2}
 --- !u!54 &611098109
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7114,7 +7102,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012974703572, guid: 3fb50408a9822dc498f14da48df9bfe5, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000012974703572, guid: 3fb50408a9822dc498f14da48df9bfe5, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7336,6 +7324,10 @@ Prefab:
     - target: {fileID: 4000011901507616, guid: 2d9f9914aad4f7b4bb83696a58d04cc5, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011800629736, guid: 2d9f9914aad4f7b4bb83696a58d04cc5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64000010892007756, guid: 2d9f9914aad4f7b4bb83696a58d04cc5, type: 2}
@@ -11950,7 +11942,7 @@ GameObject:
   - 54: {fileID: 1237259080}
   m_Layer: 0
   m_Name: shakn
-  m_TagString: Untagged
+  m_TagString: Shark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12112,7 +12104,7 @@ GameObject:
   - 137: {fileID: 1241900282}
   m_Layer: 0
   m_Name: Caudal
-  m_TagString: Untagged
+  m_TagString: Shark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
