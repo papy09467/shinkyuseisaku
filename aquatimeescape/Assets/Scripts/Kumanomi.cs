@@ -20,6 +20,9 @@ public class Kumanomi : MonoBehaviour {
 	public bool ColliEnter = false;		//当たり判定
 	private GameObject DashEffect;			//エフェクト用
 	public GameObject child_kumanomi;				//クマノミモデル用
+	GameObject winText;
+	public GameObject meshObj;
+	public GameObject deathEff; //クマノミ死エフェクト
 
 	Rigidbody rb;
 	CharacterController characterController;
@@ -40,6 +43,8 @@ public class Kumanomi : MonoBehaviour {
 		animator = child_kumanomi.GetComponent<Animator> ();
 		DashEffect = GameObject.Find ("Dash_eff");
 		DashEffect.SetActive (false);
+		winText = GameObject.Find ("Shark_win");
+		winText.SetActive (false);
 	}
 
 	// Update is called once per frame
@@ -109,6 +114,15 @@ public class Kumanomi : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision){
 		ColliEnter = true;
+		if (collision.gameObject.tag == "Shark") {
+			Invoke ("SceneMove", 3f);
+			Debug.Log ("サメ衝突");
+			Destroy (gameObject);
+			//gameOverText.text = "体験版はここまでです。";
+			winText.SetActive (true);
+			Instantiate (deathEff, transform.position, Quaternion.identity);
+			//meshObj.SetActive (false);
+		}
 	}
 	void SceneMove(){
 		CallScript.Scene("title");

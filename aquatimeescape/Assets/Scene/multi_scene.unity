@@ -6488,7 +6488,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 327299798}
-  - 135: {fileID: 327299799}
+  - 136: {fileID: 327299800}
+  - 114: {fileID: 327299799}
   m_Layer: 0
   m_Name: kumanomi_collider
   m_TagString: Untagged
@@ -6509,18 +6510,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 611098107}
   m_RootOrder: 1
---- !u!135 &327299799
-SphereCollider:
+--- !u!114 &327299799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 327299797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf98e2e63a262914fb2ed2b342896fbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshObj: {fileID: 1000011800629736, guid: 2d9f9914aad4f7b4bb83696a58d04cc5, type: 2}
+  deathEff: {fileID: 1000011372036246, guid: 5856d549809d0754d938ebede7e5ce7a, type: 2}
+--- !u!136 &327299800
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 327299797}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Center: {x: 2, y: 1, z: 0}
+  m_Radius: 2.5
+  m_Height: 6
+  m_Direction: 0
+  m_Center: {x: -0.5, y: 1, z: 0}
 --- !u!1001 &339603375
 Prefab:
   m_ObjectHideFlags: 0
@@ -6988,8 +7003,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 611098107}
   - 114: {fileID: 611098108}
-  - 136: {fileID: 611098110}
   - 54: {fileID: 611098109}
+  - 135: {fileID: 611098110}
   m_Layer: 0
   m_Name: kumanomi_rotate
   m_TagString: Untagged
@@ -7050,19 +7065,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!136 &611098110
-CapsuleCollider:
+--- !u!135 &611098110
+SphereCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 611098106}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 2.5
-  m_Height: 6
-  m_Direction: 0
-  m_Center: {x: -0.5, y: 1, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 2, y: 1, z: 0}
 --- !u!1001 &614630684
 Prefab:
   m_ObjectHideFlags: 0
